@@ -4,7 +4,7 @@ description: Create a simple chatbot that can recognize greetings, understand wh
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
-primary_tag: products>sap-conversational-ai
+primary_tag: products>sap-conversational-ai>sap-conversational-ai
 ---
 
 ## Details
