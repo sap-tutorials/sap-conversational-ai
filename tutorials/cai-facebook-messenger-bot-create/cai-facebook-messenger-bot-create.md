@@ -33,7 +33,7 @@ Your chatbot will only be available for integration on a Facebook page -- not on
 
 We assume your organization already has a page. If it does, continue to the next step.
 
-If it doesn't, create one at <https://www.facebook.com/bookmarks/pages> by doing the following:
+If it doesn't, create one by doing the following:
 
 1. Click **Create a Page**.
 
