@@ -216,20 +216,6 @@ Put yourself in the shoes of the people talking to your bot. What could they pos
 
 We want to now test to see if the bot can detect when a user says something matching the intent we created.
 
->For your bot to work, it must train itself based on the intents, expressions, and entities you define (sometimes referred as your dataset). This is done automatically, but may take some time -- up to an hour for a simple bot like this, though generally less time.
-
->You can see the status of your bot's training at the top of the screen. If blue, this means it is in the middle of training.
-
->![Training status](TrainStatus1.png)
-
-><div>&nbsp;</div>
-
->When it is done, it turns green.
-
->![Trained](TrainStatus2.png)
-
-><div>&nbsp;</div>
-
 1. Click the **Train** button at the top-right, so that the bot trains itself based on the latest intents and expressions (sometimes referred as your dataset).
 
     The button indicates the current status of training: Yellow is out of date, blue is training, green is up to date..
@@ -313,11 +299,11 @@ Now let's build a skill to tell a joke.
 
     >There are several types of skills:
     >
-    >  - **Business** and **Floating** skills are basically the same, but enable you to label those skills that implement core actions (business) and those that are merely helper skills (floating).
+    >  - **Business** skills reflect the core purpose of your bot.
     >
-    >  - The **Fallback** skill (there can only be one in a chatbot) is triggered when no other skill has their triggers fulfilled after a user message. The fallback skill tells the user that the request was not understood, reminds them what your bot can do, and asks them to rephrase their request.
+    >  - **Floating** skills complement your bot’s core business skills (for example, small talk).
 
-    >  - The **Disambiguation** skill (there can only be one in a chatbot) is triggered when more than one skill is triggered, and asks the user to choose among those skills.
+    >  - The **Initialize** skill (there can only be one in a chatbot) is triggered when the conversation with the user starts.
 
 
 3. Call your skill **`tell-me-a-joke`**, set the type as **Business**, and click **Add**.
@@ -342,11 +328,11 @@ Now let's build a skill to tell a joke.
 
 6. Go to the **Actions** tab.
 
-7. Click **Add New Message Group**, then **Add Condition**.
+7. Click **New Action Group**, then **Add Condition**.
 
     After the `If`, select the `@ask-joke` intent, and click **Save**.
 
-8. Click **Send Message**, choose the **Text** format, and type in a really good joke, like:
+8. Click **Choose Message Type**, choose the **Text** format, and type in a really good joke, like:
 
     ```Joke
     I just flew into town, and boy are my arms tired.
