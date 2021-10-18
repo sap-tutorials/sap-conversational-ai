@@ -230,19 +230,34 @@ We want to now test to see if the bot can detect when a user says something matc
 
 ><div>&nbsp;</div>
 
-1. Click the fly-out tab **Test** on the right.
+1. Click the **Train** button at the top-right, so that the bot trains itself based on the latest intents and expressions (sometimes referred as your dataset).
 
-    ![Test panel](TestButton.png)
+    The button indicates the current status of training: Yellow is out of date, blue is training, green is up to date..
 
-2. At the bottom of the panel, enter something that you think should match the intent, like:
+    ![Train](Train.png)
+
+    >By default, your bot does not train itself but you must click Train for it to understand the latest intents and expressions.
+
+    >You can change the setting so the bot automatically trains itself at **Settings > Version > (current version dropdown), and scroll down to .
+
+    >![Settings](AutomaticTraining.png)
+    ><div>&nbsp;</div>
+    > ![Training setting](AutomaticTrainingSettings.png)
+    ><div>&nbsp;</div>
+
+2. At the bottom of the panel, open the **Expression Analysis** tab.
+
+    ![Expression Analysis](TestOpen.png)
+
+3. Enter something that you think should match the intent, like:
 
     ```Text
     Botty bot, can you tell me a joke please?
     ```
 
-If the intent is successfully trained, the test will show that the bot recognized the intent.
+    If the intent is successfully trained, the test will show that the bot recognized the intent (as well as entities within the expression).
 
-![Successful test](Test.png)
+    ![Successful test](Test.png)
 
 If the bot did not recognize the intent (or selected the wrong intent), you will need to train your bot some more by adding additional expressions (Step 6).
 
