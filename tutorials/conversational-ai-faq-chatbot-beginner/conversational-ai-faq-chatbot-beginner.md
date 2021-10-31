@@ -68,7 +68,11 @@ More guidelines are in the [Help Documentation](https://help.sap.com/viewer/a452
 
 [ACCORDION-BEGIN [Step 2: ](Download CSV with questions)]
 
-Download our sample <a href="https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/conversational-ai-faq-chatbot-beginner/HowToBuildAChatbot.csv" download>`HowToBuildAChatbot.csv`</a>, which has questions and answers related to learning how to create chatbots with SAP Conversational AI.
+Download our sample <a href="https://raw.githubusercontent.com/SAPDocuments/sap-conversational-ai/main/tutorials/conversational-ai-faq-chatbot-beginner/HowToBuildAChatbot.csv" download>`HowToBuildAChatbot.csv`</a>, which has questions and answers related to learning how to create chatbots with SAP Conversational AI.
+
+
+
+
 
 ![Microsoft Excel](FAQ-excel.png)
 
