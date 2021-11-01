@@ -359,7 +359,7 @@ Double-check if there are any errors in the conversation flow (e.g., bad answers
 
 > Chat with your bot as often as you can while you build it, which will make it easier to find problems.
 
-Click on the bottom-right blue button **Chat Preview** and start sending messages. Use the clear icon ![Start](starticon.png) at the top of the panel to refresh the chat.
+Click on the bottom-right yellow button **Chat Preview** and start sending messages. Use the clear icon ![Start](starticon.png) at the top of the panel to refresh the chat.
 
 ![Start chat](StartChat.png)
 

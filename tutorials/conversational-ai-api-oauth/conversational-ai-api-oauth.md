@@ -51,6 +51,7 @@ To make things more interesting, you will create a simple web server that:
 
 Your project should look like this:
 
+![Project start](project-start.png)
 
 
 [DONE]
