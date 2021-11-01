@@ -128,6 +128,8 @@ The above is standard code, and will create the localhost server on port 5000. A
 
 >You will have to have installed the `Flask`, `flask_caching`, and `requests` packages.
 
+>All subsequent code goes where it is marked: `#Other code will go here`
+
 
 [DONE]
 [ACCORDION-END]
