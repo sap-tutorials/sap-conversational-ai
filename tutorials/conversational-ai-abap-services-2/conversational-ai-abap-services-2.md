@@ -119,6 +119,11 @@ Your subaccount will be added to the left menu.
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+
+[VALIDATE_6]
+[ACCORDION-END]
+
 
 
 ---

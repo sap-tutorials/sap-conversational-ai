@@ -62,7 +62,7 @@ You will need the following:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Create destination for production system)]
+[ACCORDION-BEGIN [Step 2: ](Create destination for production system)]
 
 1. In your subaccount, go to **Destinations** and click **New Destination**.
 
@@ -89,6 +89,11 @@ You will need the following:
 [DONE]
 [ACCORDION-END]
 
+
+[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+
+[VALIDATE_7]
+[ACCORDION-END]
 
 
 

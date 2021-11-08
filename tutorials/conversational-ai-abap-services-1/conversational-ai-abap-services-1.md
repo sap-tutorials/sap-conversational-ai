@@ -172,6 +172,11 @@ The view name is the name entered in the `define view` statement in the CDS code
 [ACCORDION-END]
 
 
+[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+
+[VALIDATE_6]
+[ACCORDION-END]
+
 
 
 ---
