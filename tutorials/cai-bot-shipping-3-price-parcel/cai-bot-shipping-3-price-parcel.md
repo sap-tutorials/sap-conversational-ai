@@ -254,7 +254,7 @@ You can open a chat and test this, by entering: **How much to send package to Pa
 
 2. Click **Send Message | Quick Replies**.
 
-3. For the the message, add:
+3. For the message, add:
 
     ```Message
     Are you sure?
