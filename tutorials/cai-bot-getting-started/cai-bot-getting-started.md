@@ -4,7 +4,7 @@ description: Create a simple chatbot that can recognize greetings, understand wh
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
-primary_tag: products>sap-conversational-ai>sap-conversational-ai
+primary_tag: products>sap-conversational-ai
 ---
 
 ## Details
@@ -301,7 +301,7 @@ Now let's build a skill to tell a joke.
     >
     >  - **Business** skills reflect the core purpose of your bot.
     >
-    >  - **Floating** skills complement your bot’s core business skills (for example, small talk).
+    >  - **Floating** skills complement your bot's core business skills (for example, small talk).
 
     >  - The **Initialize** skill (there can only be one in a chatbot) is triggered when the conversation with the user starts.
 
