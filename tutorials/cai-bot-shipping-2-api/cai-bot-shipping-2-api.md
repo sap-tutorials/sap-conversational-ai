@@ -38,7 +38,7 @@ In this tutorial, you will modify the chatbot so it calls an API to retrieve inf
 
 5. Click **Save**.
 
->This endpoint contains a Python demo script that makes all kinds of API calls, including retrieving package information from UPS.
+>This endpoint contains a Python demo script that makes all kinds of API calls, including retrieving package information from UPS. It is described in this [blog](https://blogs.sap.com/2020/02/17/how-to-build-your-first-delivery-tracking-chatbot/).
 
 [DONE]
 [ACCORDION-END]
