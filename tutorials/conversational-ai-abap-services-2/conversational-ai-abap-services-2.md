@@ -33,7 +33,8 @@ Our chatbot in the SAP Conversational AI Enterprise Edition will want to call th
     ```Shell
     /usr/local/sbin/rcscc_daemon start
     ```
-It may take a few minutes for the cloud conector to start. You will get a message when it starts:
+
+It may take a few minutes for the cloud connector to start. You will get a message when it starts:
 
 ![Cloud connector started](cc-started.png)
 
