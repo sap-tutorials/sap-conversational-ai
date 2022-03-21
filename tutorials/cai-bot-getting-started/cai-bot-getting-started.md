@@ -18,6 +18,8 @@ primary_tag: products>sap-conversational-ai
 
 [ACCORDION-BEGIN [Step 1: ](Create SAP Conversational AI account)]
 
+
+
 Go to [https://cai.tools.sap/](https://cai.tools.sap/), and click **Sign Up** in the upper-right corner.
 
 Follow the instructions for creating an account.
@@ -224,7 +226,7 @@ We want to now test to see if the bot can detect when a user says something matc
 
     >By default, your bot does not train itself but you must click Train for it to understand the latest intents and expressions.
 
-    >You can change the setting so the bot automatically trains itself at **Settings > Version > (current version dropdown), and scroll down to .
+    >You can change the setting so the bot automatically trains itself at **Settings > Version > (current version dropdown)**, and scroll down to .
 
     >![Settings](AutomaticTraining.png)
     ><div>&nbsp;</div>
