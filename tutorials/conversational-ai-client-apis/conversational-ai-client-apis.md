@@ -330,7 +330,52 @@ You can inspect the payload object in the method to see what other information i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Set client info and preferences)]
+[ACCORDION-BEGIN [Step 8: ](Capture data messages)]
+
+Capturing messages lets the chatbot communicate with the web client. But what if the chatbot wants to communicate but not display any message to the user.
+
+In such cases, the chatbot can send a "client data" message, which sends a JSON payload that is not displayed in the chat (the chatbot can send additional messages that are displayed).
+
+1. In your chatbot, go to the **Build** > **Greetings** skill, and open the **Action** tab.
+
+    At the end of the greetings action group, add a new message of type **Client Data**.
+
+    ![Client data message](clientdata-message.png)
+
+2. Add one key-value pair, with the key `emoji` and the value any emoji you want.
+
+    ![Client data emoji](clientdata-message-text.png)
+
+3. Replace the `onMessage` function to the one below.
+
+    ```JavaScript
+    // called on every message
+    onMessage: (payload) => {
+        payload.messages.map(message => {
+            if (message.attachment.type == 'client_data') {
+                message.attachment.content.elements.map(pair => {
+                    if (pair.key == 'emoji') {
+                        alert("Here is a special gift for you:\n\n" + pair.value)
+                    }
+                })
+            }
+        });
+    },
+    ```
+
+    The above code will now display an alert to the user with the emoji the chatbot sent -- without displaying any extra message to the user in the chatbot (it will still send the greeting message).
+
+    ![Capture message](clientdata-message-capture.png)
+
+See at the end of some use cases for this feature.
+
+[DONE]
+[ACCORDION-END]
+
+
+
+
+[ACCORDION-BEGIN [Step 10: ](Set client info and preferences)]
 The following two methods are called at the start of the conversation, and used to set the theme (including some texts) and the client information, which is accessible to the chatbot.
 
 Add the following method to the `webclientBridge` object:
@@ -383,7 +428,10 @@ The preferences let you set some of the color settings, as well as texts and ico
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](2 use cases)]
+
+
+
+[ACCORDION-BEGIN [Step 11: ](2 use cases)]
 
 A use case originally created for the Web Chat was to allow a user to type into the chatbot whether to move or zoom a Google map embedded in the web app. The chatbot interprets what the user wants and sends the results as a message, and the web page intercepts that message and calls the appropriate Google API to adjust the map.
 
