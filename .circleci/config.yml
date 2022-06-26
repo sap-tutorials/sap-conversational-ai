@@ -1,5 +1,5 @@
 orbs:
-  tutorial-checker-orb: saptutorials/tutorial-checker-orb@1.1.1
+  tutorial-checker-orb: saptutorials/tutorial-checker@1.0.0
 version: 2.1
 notify:
   webhooks:
