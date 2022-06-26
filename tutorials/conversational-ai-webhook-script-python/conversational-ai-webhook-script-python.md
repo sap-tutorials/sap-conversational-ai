@@ -8,7 +8,7 @@ primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - A [SAP Business Technology Platform trial account](hcp-create-trial-account). If you create a new trial account you should have the necessary entitlements, but check the tutorial [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements), if needed.
+ - A [SAP Business Technology Platform trial account](https://developers.sap.com/tutorials/hcp-create-trial-account.html). If you create a new trial account you should have the necessary entitlements, but check the tutorial [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements), if needed.
  - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
  - [Python](https://www.python.org/downloads/)
  - [VS Code](https://code.visualstudio.com/) with the [Python extension by Microsoft](https://code.visualstudio.com/docs/languages/python), though you can use any Python development environment. See [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
