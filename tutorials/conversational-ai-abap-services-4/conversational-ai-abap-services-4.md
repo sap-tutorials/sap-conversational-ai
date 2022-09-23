@@ -38,7 +38,7 @@ In your subaccount, go to **Instances and Subscriptions**, and click the SAP Con
 
 >You can access the service directly with a URL in the form:
 
->`https://<subaccount>.<global acount>.sapcai.<region>.hana.ondemand.com/`
+>`https://<subaccount>.<global account>.sapcai.<region>.hana.ondemand.com/`
 
 
 
