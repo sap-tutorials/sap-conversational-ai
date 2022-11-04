@@ -1,22 +1,24 @@
 ---
-title: Debug Your SAP Conversational AI Chatbot
-description: Use the debugging features of SAP Conversational AI while designing your chatbot to help you fix problems and improve the chatbot.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>machine-learning, topic>artificial-intelligence, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Debug Your SAP Conversational AI Chatbot
+<!-- description --> Use the debugging features of SAP Conversational AI while designing your chatbot to help you fix problems and improve the chatbot.
+
 ## Prerequisites
  - You have already built the bot described in [Create Chatbot for Customers of Shipping Company](group.cai-shipping-bot).
 
 
-## Details
-### You will learn
+## You will learn
 - How the chatbot chooses what skill to run
 - How to use the Test panel
 - How to use the Chat Preview, including its JSON and debug features
 
+## Intro
 Once you design your bot and are putting it together (e.g., adding intents, expressions, and intents), you will want to test it as you go and keep making it better. The Test panel and Chat Preview lets you test your bot against different hypothetical utterances and conversations, to see what is happening under the hood -- and then make adjustments.
 
 In previous tutorials we used the test panel and chat preview. Now that you have a little experience, we can take a deeper dive into the debugging tools and how to make the best use of them.
@@ -26,7 +28,8 @@ In previous tutorials we used the test panel and chat preview. Now that you have
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](How does chatbot work?)]
+### How does chatbot work?
+
 
 To truly understand how chatbots work, you need to peer under the hood a little and see the process. Yes, a little technical, sometimes philosophical, but it will help when you're struggling and debugging your chatbot.
 
@@ -38,11 +41,11 @@ There are 2 main things that happen each time someone enters text into the conve
 
     >Actions can be sending a message, calling an API, or changing the conversation state (by activating a different skill, editing the memory, or resetting the conversation).
 
-[VALIDATE_6]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](NLP)]
+
+### NLP
+
 NLP (Natural Language Processing) takes the intents and entities you define (and later the actual input from users) and trains itself to map the user's utterances to your intents and entities.
 
 For each intent, the NLP decides how confident it is that this intent is what is meant by the user. At the same time, you assign each intent a matching strictness (default is 50%).
@@ -65,10 +68,9 @@ Finally, any intent where the confidence is over its strictness setting is selec
 >- **Green Dot:** Bot is up to date
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](NLP – and Test panel)]
+### NLP – and Test panel
+
 
 The Test panel allows you to test how the NLP is detecting individual user utterances.
 
@@ -103,11 +105,10 @@ The Test panel allows you to test how the NLP is detecting individual user utter
 >Also, if you have a skill for each intent, this will cause a disambiguation problem, because the chatbot does not know which skill to trigger. (If you have a [disambiguation skill](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/e57e071f365c49a980801c93a6c51c02.html), the chatbot will run this skill, displaying the possible others skills that were selected, and the user would be able to select the one that best reflects his intent.)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Skill selection)]
+### Skill selection
+
 Once the intents and entities are detected, the chatbot has a complex mechanism for selecting the skill to execute. Here's how it works:
 
 1. **Is the user's utterance related to something they said just before?**
@@ -136,16 +137,16 @@ Once a skill is selected, its requirements are checked. If they are fulfilled, t
 
 The following is a flowchart showing how things work:
 
-!![Process flow](CAI-process-flow.jpg)
-
-
-[VALIDATE_1]
-[ACCORDION-END]
+<!-- border -->![Process flow](CAI-process-flow.jpg)
 
 
 
 
-[ACCORDION-BEGIN [Step 5: ](Chat preview)]
+
+
+
+### Chat preview
+
 The Chat Preview lets you test how your chatbot will handle user input -- essentially, testing the skill selection of the chatbot.
 
 1. Open your shipping bot.
@@ -167,10 +168,9 @@ At the top of the screen, from left to right, you have the following tools:
 - Open the Debug panel
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](JSON conversation)]
+### JSON conversation
+
 You can access a representation of the conversation in JSON format by click the yellow **i** next to any response by the chatbot.
 
 ![Open JSON](json-open.png)
@@ -187,10 +187,9 @@ Some of the key information you can see with the JSON:
 
 >![JSON return](json-return.png)<div>&nbsp;</div>
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Debug panel)]
+### Debug panel
+
 The Debug panel gives you a better view of the skill selection -- what skills are being triggered, what messages are being sent, what APIs are being access.
 
 1. Open the Chat Preview.
@@ -255,15 +254,13 @@ The Debug panel gives you a better view of the skill selection -- what skills ar
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 
 ---

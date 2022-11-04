@@ -1,22 +1,24 @@
 ---
-title: Call SAP Conversational AI API with OAuth (Postman)
-description: Retrieve an OAuth token and use it to call the SAP Conversational AI API, using Postman.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>machine-learning, topic>artificial-intelligence]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Call SAP Conversational AI API with OAuth (Postman)
+<!-- description --> Retrieve an OAuth token and use it to call the SAP Conversational AI API, using Postman.
+
 ## Prerequisites
 - You have installed the [Postman](https://www.postman.com/downloads/) app.
 - You have created a SAP Conversational AI chatbot, for example, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](mission.cai-get-started).
 
-## Details
-### You will learn
+## You will learn
 - How to retrieve an OAuth token for use with SAP Conversational AI API
 - How to call SAP Conversational AI API with an OAuth token
 - How to set up a Postman collection to call the APIs
 
+## Intro
 This tutorial is a companion to the tutorial [Call SAP Conversational AI API Using OAuth](conversational-ai-api-oauth), which was a more sophisticated setup for calling SAP Conversational AI APIs using a Python server. Here, you will use Postman to more simply show how to retrieve an OAuth token and then call the API.
 
 In Postman, you will set up 3 requests, and put them in a collection so they can be run together and pass arguments to each other:
@@ -31,7 +33,8 @@ In Postman, you will set up 3 requests, and put them in a collection so they can
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Postman environment)]
+### Create Postman environment
+
 We will need to create a Postman environment to store the various credentials for the OAuth and Runtime API credentials.
 
 1. Open Postman.
@@ -60,10 +63,9 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 
 >The URLs in this tutorial are for the community edition. We could have added the URLs in the environment so the entire setup would have also worked for the enterprise edition.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get and store chatbot credentials)]
+### Get and store chatbot credentials
+
 
 1. Go to your [SAP Conversational AI](https://cai.tools.sap/) account and open your chatbot.
 
@@ -94,11 +96,10 @@ Keep the **Manage Environments** window open. In the next step we will get your 
     Click **Update**, and then click the **X** to close the **Manage Environments** window.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create request to start run)]
+### Create request to start run
+
 
 1. Create a new collection by again clicking **New+**, and this time selecting **Environment**.
 
@@ -135,10 +136,9 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 5. Click **Save**.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create request to get OAuth token)]
+### Create request to get OAuth token
+
 
 1. Click **New+ > Request**.
 
@@ -194,10 +194,9 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 7. Click **Save**.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create request to call chatbot API)]
+### Create request to call chatbot API
+
 
 1. Click **New+ > Request**.
 
@@ -260,10 +259,9 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 
 6. Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run collection)]
+### Run collection
+
 
 1. In the top-left of Postman, click **Runner**.
 
@@ -310,15 +308,13 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 
 ---

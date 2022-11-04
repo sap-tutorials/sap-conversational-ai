@@ -1,24 +1,26 @@
 ---
-title: Use Scripting to Design a Chatbot Message from an API Response
-description: Create an SAP Conversational AI chatbot for customer ordering by calling an API and using scripting to create a custom message from the response.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Use Scripting to Design a Chatbot Message from an API Response
+<!-- description --> Create an SAP Conversational AI chatbot for customer ordering by calling an API and using scripting to create a custom message from the response.
+
 ## Prerequisites
   - You'll need an SAP Conversational AI trial account. See [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
 
-## Details
-### You will learn
+## You will learn
   - How to fetch entity values with an external (OData) service
   - How to build a custom message using scripting
   - How to create a button that lets the end user trigger a skill
 
+## Intro
 You will build a bot so customers can order a product from categories like food, beverages or electronics -- simulating a convenience store digital commercial chatbot. Here's a sneak peek:
 
-!![bot's sneak peek](intro_pic.png)
+<!-- border -->![bot's sneak peek](intro_pic.png)
 
 To build the bot, you start by creating an intent for ordering a product, which then gives the customer a dynamically generated list of products depending on the category the customer chose. This is done by calling an OData service.
 
@@ -30,7 +32,8 @@ The main purpose of this tutorial is to demonstrate how to make API requests and
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create new bot and intent)]
+### Create new bot and intent
+
 
 1. Go to [SAP Conversational AI](https://cai.tools.sap/) and log in.
 
@@ -44,7 +47,7 @@ The main purpose of this tutorial is to demonstrate how to make API requests and
     |  4. Data Policy  | **Non-personal**, **Store data** and **Non-vulnerable**
     |  5. Bot Visibility | **Public**
 
-    !![Create bot](newbot.png)
+    <!-- border -->![Create bot](newbot.png)
 
     Click **Create a Bot**.
 
@@ -56,12 +59,11 @@ The main purpose of this tutorial is to demonstrate how to make API requests and
 
 4. Open the intent and add the following expression: `See Categories for Sale`.
 
-    !![Add an expression](intentexpression.png)
+    <!-- border -->![Add an expression](intentexpression.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create entities)]
+### Create entities
+
 
 You will create entities to represent the categories of products, and another entity for the products. The list of products will be fetched from an API.
 
@@ -79,7 +81,7 @@ You will create entities to represent the categories of products, and another en
     -	Beverages
     -	Electronics
 
-    !![Add values to category entity](categoryvalues.png)
+    <!-- border -->![Add values to category entity](categoryvalues.png)
 
 3. Create another entity for products, but in this case, you are going to fetch the data from an external (OData) service.
 
@@ -89,7 +91,7 @@ You will create entities to represent the categories of products, and another en
 
 4. Open the `product` entity, and click **Fetch Via Service API**.
 
-    !![Fetch button](fetchbutton.png)
+    <!-- border -->![Fetch button](fetchbutton.png)
 
     Select **GET** and paste the following endpoint (this is a public OData service, so feel free to explore it 😊):
 
@@ -109,29 +111,28 @@ You will create entities to represent the categories of products, and another en
 
     Keep the option **Replace**, and then click **Import**.
 
-    !![Fetch entity values](fetchvalues.png)
+    <!-- border -->![Fetch entity values](fetchvalues.png)
 
     You should be able to see the values imported like this:
 
-    !![See entity values](productvalues.png)
+    <!-- border -->![See entity values](productvalues.png)
 
 >If you want to know more about importing entity values using an external service and more, see [Importing Entity Values](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/9e2258a02ba74660b6607bf3d8f6b890.html).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create skill for ordering)]
+### Create skill for ordering
+
 
 1. In the **Build** tab, click **Add skill**.
 
 2. Call the skill `forsale`, choose **Business** for the type, and click **Add**.
 
-    !![Create skill](forsaleskill.png)
+    <!-- border -->![Create skill](forsaleskill.png)
 
     You'll see your skill created like this:
 
-    !![Create skill 2](forsaleskill2.png)
+    <!-- border -->![Create skill 2](forsaleskill2.png)
 
 3. Click the skill and go to the **Triggers** tab.
 
@@ -139,12 +140,11 @@ You will create entities to represent the categories of products, and another en
 
 4. Click the box next to **If**, select the **`categoriesforsale`** intent, and click **Save**.
 
-    !![Condition trigger](conditiontrigger.png)
+    <!-- border -->![Condition trigger](conditiontrigger.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add category requirement for skill)]
+### Add category requirement for skill
+
 
 To order, the customer must provide a category and a product. These will be set up as requirements for the skill.
 
@@ -154,7 +154,7 @@ To order, the customer must provide a category and a product. These will be set 
 
 3. Expand this requirement and click **if #category is missing**.
 
-    !![Requirement for category](ifcategorymissing.png)
+    <!-- border -->![Requirement for category](ifcategorymissing.png)
 
     Click **Connect External Service > Consume API Service**. You will use the service, and then use scripting on its response, to tell the user to select a category.
 
@@ -201,18 +201,17 @@ To order, the customer must provide a category and a product. These will be set 
     >If you want to know more about custom messages, see [Message Types](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/ad3681adae824f8a96cbcf8b889a4ffc.html).
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 5: ](Add product requirement for skill)]
+### Add product requirement for skill
+
 
 1. Go back to **Requirements** tab.
 
     Add a new requirement by click the first **+** sign (**Add a new requirement**) immediately below the category requirement you just added.
 
-    !![New requirement](newrequirement.png)
+    <!-- border -->![New requirement](newrequirement.png)
 
 2. Select the **#product** entity as a requirement, and enter **product** as the memory variable, and then press **Enter**.
 
@@ -272,12 +271,11 @@ To order, the customer must provide a category and a product. These will be set 
 
     >You can start testing the chatbot by clicking **Chat Preview**. Type in **See Categories for Sale** and see how the chatbot shares the categories available. Then select one and you'll see its products.
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 6: ](Create skill for checkout)]
+### Create skill for checkout
+
 
 Once the customer selects a product, you'll want to let the customer checkout and buy the product.
 
@@ -297,7 +295,7 @@ Once the customer selects a product, you'll want to let the customer checkout an
 
 5. Expand this requirement and click **if #person is missing**, where you will ask for the user's full name.
 
-    !![Requirement for person](personmissing.png)
+    <!-- border -->![Requirement for person](personmissing.png)
 
     Click **Send Message > Text**, and copy and paste the following:
 
@@ -307,7 +305,7 @@ Once the customer selects a product, you'll want to let the customer checkout an
 
     Click **Save**.
 
-    !![Question for person](personquestion.png)
+    <!-- border -->![Question for person](personquestion.png)
 
 6. Now let's do the same for the customer's email and location (address).
 
@@ -315,7 +313,7 @@ Once the customer selects a product, you'll want to let the customer checkout an
 
     After adding email and location and expanding them, you'll see the following:
 
-    !![Requirement for email and location](emaillocation.png)
+    <!-- border -->![Requirement for email and location](emaillocation.png)
 
 7. Now let's put the questions for each of them.
 
@@ -332,10 +330,9 @@ Once the customer selects a product, you'll want to let the customer checkout an
     Now I need your shipping address, could you please write it down?
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Let user trigger checkout skill)]
+### Let user trigger checkout skill
+
 
 Now you'll connect the skills `forsale` and `checkout` together, for the checkout process.
 
@@ -353,7 +350,7 @@ Now you'll connect the skills `forsale` and `checkout` together, for the checkou
 
 4. Click **Add a Button > Trigger Skill**.
 
-    !![Add an end-user skill trigger](triggerskillbutton.png)
+    <!-- border -->![Add an end-user skill trigger](triggerskillbutton.png)
 
     Set the following for the button:
 
@@ -366,10 +363,9 @@ Now you'll connect the skills `forsale` and `checkout` together, for the checkou
 
     >As you can see, you're enabling an end-user skill trigger feature by selecting the `checkout` skill as a button's action. In this way, the chatbot triggers the `checkout` skill automatically when the user selects this option.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add actions to checkout skill)]
+### Add actions to checkout skill
+
 
 
 1. Go to the **Build** tab and click the **checkout** skill.
@@ -388,18 +384,17 @@ Now you'll connect the skills `forsale` and `checkout` together, for the checkou
 
 You should see the following:
 
-!![Create a checkout action](checkoutaction.png)  
+<!-- border -->![Create a checkout action](checkoutaction.png)  
 
 > We are going to leave the exercise 'til this point. However, you can use this as an example on how to build a commercial bot and continue integrating it with a backend server app, e-commerce platform or an external service such as a payment engine to charge the order to the customer.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Modify greetings skill to ask about ordering)]
+### Modify greetings skill to ask about ordering
+
 
 1. Go to the **Build** tab and open the **greetings**' skill.
 
-    !![Greetings](intentgreetings.png)
+    <!-- border -->![Greetings](intentgreetings.png)
 
 2. Go to the **Actions** tab.
 
@@ -407,11 +402,11 @@ You should see the following:
 
 3. **Delete** all the messages (not the message groups), since you will define your own.
 
-    !![Delete Messages](deletegreetingsmessages.png)
+    <!-- border -->![Delete Messages](deletegreetingsmessages.png)
 
 4. Click **Send Message > Card**.
 
-    !![Card Message](cardmessage.png)
+    <!-- border -->![Card Message](cardmessage.png)
 
     Set the following:
 
@@ -423,7 +418,7 @@ You should see the following:
 
 5. Click **Add a Button > Postback**.
 
-    !![Postback 1](addintentgreetings.png)
+    <!-- border -->![Postback 1](addintentgreetings.png)
 
     Notice that here you can also set up a end-user skill trigger feature to trigger the `forsale` skill. But in this case you will "link" the intent `categoriesforsale` with its main expression **See Categories for Sale** using the **Postback** option.
 
@@ -431,28 +426,27 @@ You should see the following:
 
 6. Click **Add a Button > Postback**.
 
-    !![Postback 2](postback2.png)
+    <!-- border -->![Postback 2](postback2.png)
 
     Enter `Ask for an Order Tracking` for both the **Button Title** and **Postback** values.
 
     >We're going to leave it 'til here, using **see categories for sale** as the main intent for this exercise. However this is an example of how you can put more options for the user to select and interact with the chatbot.
 
-    !![Postback 3](postback_3.png)
+    <!-- border -->![Postback 3](postback_3.png)
 
 7. Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test bot)]
+### Test bot
+
 
 1. Click **Chat Preview**.
 
-    !![Chat Preview](chatpreview.png)
+    <!-- border -->![Chat Preview](chatpreview.png)
 
 2. Test the bot by talking with it. The following is an example of the conversation:
 
-    !![Test Bot](bot_test.png)
+    <!-- border -->![Test Bot](bot_test.png)
 
 3. Check out the bot's memory by clicking the yellow *i* for the last message. You'll be able to see the whole entities saved in the bot's memory, like this:
 
@@ -460,20 +454,18 @@ You should see the following:
 
     While testing, you can also click **Debug** to see which skills were triggered in every step of the conversation. This can help you to better understand how the chatbot is working and to keep improving its performance.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself: scripting syntax)]
-
-[VALIDATE_6]
-[ACCORDION-END]
+### Test yourself: scripting syntax
 
 
-[ACCORDION-BEGIN [Step 10: ](Test yourself: custom messages)]
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
+### Test yourself: custom messages
+
+
+
 
 ---
 

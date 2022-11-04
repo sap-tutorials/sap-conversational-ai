@@ -1,17 +1,18 @@
 ---
-title: Deploy an SAP Conversational AI Chatbot on Slack
-description: Deploy an SAP Conversational AI chatbot on Slack and add it to a Slack channel to respond to user messages.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Deploy an SAP Conversational AI Chatbot on Slack
+<!-- description --> Deploy an SAP Conversational AI chatbot on Slack and add it to a Slack channel to respond to user messages.
+
 ## Prerequisites
  - You have created a chatbot to deploy. This tutorial uses the bot created in the tutorial [Consume API Services and Call Webhooks from Your Chatbot](conversational-ai-webhook-api-call).
 
-## Details
-### You will learn
+## You will learn
   - How to deploy a chatbot to Slack
   - How to add app to channel
   - How to talk directly with the app without a channel
@@ -19,7 +20,8 @@ primary_tag: products>sap-conversational-ai
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect with Slack)]
+### Connect with Slack
+
 
 1. Go to the **Connect** tab.
 
@@ -31,10 +33,9 @@ primary_tag: products>sap-conversational-ai
 
 This will open a set of instructions for integrating with Slack, and a place to store tokens for connecting to Slack. But you can follow the instructions in this tutorial instead.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Slack app)]
+### Create a Slack app
+
 
 1. Go to <https://api.slack.com/apps>.
 
@@ -55,11 +56,10 @@ This will open a set of instructions for integrating with Slack, and a place to 
 
     ![New app](create-app-new-app.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Get credentials)]
+### Get credentials
+
 
 1. In the Slack app page, in the **Basic Information** tab, scroll down to the **App Credentials** section.
 
@@ -77,10 +77,9 @@ This will open a set of instructions for integrating with Slack, and a place to 
 
     Hold onto to these URLs because you will need to enter them within your app on Slack.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Set the OAuth redirect URL)]
+### Set the OAuth redirect URL
+
 
 1. In the Slack app page, go to **OAuth & Permissions**.
 
@@ -91,10 +90,9 @@ This will open a set of instructions for integrating with Slack, and a place to 
     Enter the OAuth URL from SAP Conversational AI, click **Add**, then click **Save URLs**.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enable interactivity)]
+### Enable interactivity
+
 
 1. In the Slack app page, go to **Interactivity & Shortcuts**.
 
@@ -108,10 +106,9 @@ This will open a set of instructions for integrating with Slack, and a place to 
 
     Click **Save Changes**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add scopes)]
+### Add scopes
+
 
 1. In the Slack app page, go to **OAuth & Permissions**, and scroll down to **Scopes**.
 
@@ -131,10 +128,9 @@ This will open a set of instructions for integrating with Slack, and a place to 
 
 3. Scroll to the top and click **Install App to Workspace**, and then click **Allow** to give your app the needed permissions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Subscribe to events)]
+### Subscribe to events
+
 
 1. In the Slack app page, go to **Event Subscriptions**.
 
@@ -156,10 +152,9 @@ This will open a set of instructions for integrating with Slack, and a place to 
 
 5. Click **Save Changes**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add bot to workspace)]
+### Add bot to workspace
+
 
 In the Slack panel in the **Connect** tab in SAP Conversational AI, go to step 8 (Add my bot to a slack channel).
 
@@ -173,10 +168,9 @@ Allow the permissions for the app by clicking **Allow**. You should get a succes
 
 ![Allow OK](authorize-OK.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Talk to the app directly)]
+### Talk to the app directly
+
 
 1. In Slack, scroll down to **Apps**, click **+** and add the app to your Slack.
 
@@ -197,10 +191,9 @@ Allow the permissions for the app by clicking **Allow**. You should get a succes
     >Cats can't produce fat!?
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Talk to bot in channel)]
+### Talk to bot in channel
+
 
 You can also add the app to a channel, so when someone specifically sends a message to the app, the bot processes the message and returns the appropriate response.
 
@@ -218,12 +211,10 @@ You can also add the app to a channel, so when someone specifically sends a mess
 
     >Did you know snails are closely related to oysters and clams?
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

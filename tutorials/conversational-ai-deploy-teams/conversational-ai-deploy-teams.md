@@ -1,6 +1,5 @@
 ---
-title: Deploy an SAP Conversational AI Chatbot to Microsoft Teams
-description: Enable an SAP Conversational AI chatbot to be run within Microsoft Teams.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-business-technology-platform]
@@ -10,18 +9,22 @@ author_profile: https://github.com/thecodester
 
 ---
 
+# Deploy an SAP Conversational AI Chatbot to Microsoft Teams
+<!-- description --> Enable an SAP Conversational AI chatbot to be run within Microsoft Teams.
+
 ## Prerequisites
  - You have created a chatbot to deploy. This tutorial uses the bot created in the tutorial [Consume API Services and Call Webhooks from Your Chatbot](conversational-ai-webhook-api-call).
 
-## Details
-### You will learn
+## You will learn
   - How to enable your chatbot within Microsoft Teams
 
+## Intro
 This tutorial shows you how to enable and test your chatbot in Microsoft teams, but does not include information on adding the chatbot to teams and channels within Microsoft Teams. For more information on this, see [Manage your apps in the Microsoft Teams admin center](https://docs.microsoft.com/en-us/MicrosoftTeams/manage-apps).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Microsoft Azure account)]
+### Create Microsoft Azure account
+
 
 1. Create a trial account at [Microsoft Azure](https://azure.microsoft.com/en-in/free/).
 
@@ -37,10 +40,9 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
     Make sure the `microsoft.insights` is registered.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Azure bot channel)]
+### Create Azure bot channel
+
 1. Go to the Microsoft Azure [portal](https://portal.azure.com/).
 
 2. Click **Create a Resource**.
@@ -79,11 +81,10 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
     There will be 2 links: one to the resource, and one to the key vault, where you get the secret.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Get your app ID and secret)]
+### Get your app ID and secret
+
 
 
 1. Open your bot resource, and go to **Settings > Configuration**.
@@ -116,10 +117,9 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
     ![Copy secret](key-vault-secret2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Connect bot to Azure)]
+### Connect bot to Azure
+
 
 1. Go back to [SAP Conversational AI](https://cai.tools.sap/).
 
@@ -142,10 +142,9 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
     Click **Apply** (at top).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test bot in Azure)]
+### Test bot in Azure
+
 
 1. Still in your resource in Azure, go to **Test in Web Client**.
 
@@ -157,10 +156,9 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
     ![Test](5-test.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test bot in Teams)]
+### Test bot in Teams
+
 
 1. Still in your resource in Azure, select **Channels**.
 
@@ -182,16 +180,14 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
     ![Test in Teams](6-test-in-teams.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---
 

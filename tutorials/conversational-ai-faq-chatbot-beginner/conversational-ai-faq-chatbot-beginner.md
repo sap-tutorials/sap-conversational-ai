@@ -1,22 +1,24 @@
 ---
-title: Build Your First FAQ Chatbot
-description: Using SAP Conversational AI, build a chatbot designed to help users find answers to questions, based on a set of questions and answers uploaded in a CSV file.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Build Your First FAQ Chatbot
+<!-- description --> Using SAP Conversational AI, build a chatbot designed to help users find answers to questions, based on a set of questions and answers uploaded in a CSV file.
+
 ## Prerequisites
  - You have an [SAP Conversational AI](https://cai.tools.sap/signup) account.
 
-## Details
-### You will learn
+## You will learn
   - How to create an FAQ chatbot
   - How to upload a question/answer file
   - About the proper format of the questions/answers file
   - How to see what users really asked and to add those questions to the bot
 
+## Intro
 An FAQ chatbot lets a user ask questions and lets you guide them to the correct answer.
 
 ![Example](FAQ-intro.png)
@@ -37,7 +39,8 @@ For an overview of creating an FAQ chatbot, see this 3-minute video:
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Understand format of questions CSV file)]
+### Understand format of questions CSV file
+
 
 For this tutorial, use the CSV file we will provide you. But you can create your own using the following guidelines:
 
@@ -62,11 +65,10 @@ More guidelines are in the [Help Documentation](https://help.sap.com/viewer/a452
 
 >You can create your own in Microsoft Excel, and save it as a **`CSV UTF-8 (Comma-delimited) (.csv)`** file.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Download CSV with questions)]
+### Download CSV with questions
+
 
 Download our sample <a href="https://raw.githubusercontent.com/SAPDocuments/sap-conversational-ai/main/tutorials/conversational-ai-faq-chatbot-beginner/HowToBuildAChatbot.csv" download>`HowToBuildAChatbot.csv`</a>, which has questions and answers related to learning how to create chatbots with SAP Conversational AI.
 
@@ -76,11 +78,10 @@ Download our sample <a href="https://raw.githubusercontent.com/SAPDocuments/sap-
 
 ![Microsoft Excel](FAQ-excel.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create skeleton FAQ bot)]
+### Create skeleton FAQ bot
+
 
 1. Go to <https://cai.tools.sap/>, and sign in.
 
@@ -101,10 +102,9 @@ Download our sample <a href="https://raw.githubusercontent.com/SAPDocuments/sap-
 
 3. Click **Create**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Upload CSV file)]
+### Upload CSV file
+
 
 1. On the **Train** tab, click **Upload Document**, and select the file you downloaded.
 
@@ -121,10 +121,9 @@ After the upload, you will have a file listed in your **Train** tab.
 
 >But it may help your workflow to have them in multiple files, for example, if different people are working on different sets of questions. In addition, when the bot recognizes a question, it can determine in which file the question was defined and can provide a response specific to the file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Explore the questions)]
+### Explore the questions
+
 
 Click `howtobuildachatbot-csv`.
 
@@ -148,10 +147,9 @@ What you can see/do:
     ![Download](FAQ-download.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Explore the skills)]
+### Explore the skills
+
 
 Go to the **Build** tab.
 
@@ -175,10 +173,9 @@ Every FAQ bot comes automatically with a set of helper skills for letting users 
 
     >`{qna.faq.answers.0.question}` specifies the top-ranked question. You can access the top 10 ranked questions and answers, specified with numbers 0-9.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test and monitor your bot)]
+### Test and monitor your bot
+
 
 Click the fly-out tab **Test** on the right and enter **What is a skill?**.
 
@@ -192,12 +189,12 @@ Below that are additional questions that the bot also considered as the intended
 
 For the first question, the bot was 99% sure, so it showed this as the question the user was asking. The second question had 93% confidence, the next 90% and the next 88%.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 8: ](Monitor and improve the bot)]
+
+### Monitor and improve the bot
+
 
 After releasing the bot, you can monitor what questions people are asking and either:
 
@@ -237,8 +234,6 @@ After releasing the bot, you can monitor what questions people are asking and ei
 
     ![Different question](FAQ-monitor4.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---
 

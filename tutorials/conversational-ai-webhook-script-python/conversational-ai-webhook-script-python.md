@@ -1,11 +1,13 @@
 ---
-title: Build a Webhook for a Chatbot Using Python
-description: Create a Python script (with Flask), deploy it to SAP Business Technology Platform, and use it as a webhook to be called by an SAP Conversational AI chatbot.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, programming-tool>python, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
+
+# Build a Webhook for a Chatbot Using Python
+<!-- description --> Create a Python script (with Flask), deploy it to SAP Business Technology Platform, and use it as a webhook to be called by an SAP Conversational AI chatbot.
 
 ## Prerequisites
  - A [SAP Business Technology Platform trial account](https://developers.sap.com/tutorials/hcp-create-trial-account.html). If you create a new trial account you should have the necessary entitlements, but check the tutorial [Manage Entitlements on SAP BTP Trial](https://developers.sap.com/tutorials/cp-trial-entitlements.html), if needed.
@@ -16,14 +18,14 @@ primary_tag: products>sap-conversational-ai
  - [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
 
 
-## Details
-### You will learn
+## You will learn
   - How to create a Python endpoint in SAP BTP, using Flask
   - How to read POST data from a chatbot
   - How to send back data to a chatbot
   - How to deploy a Python script to SAP BTP (using Cloud Foundry CLI)
   - How to connect the webhook to the chatbot
 
+## Intro
 You will create a very simple chatbot that asks the user to pick an animal, and then have the chatbot call a webhook, which will then call an API to retrieve a "fun fact" about the animal via the [`cat-facts`](https://alexwohlbruck.github.io/cat-facts/docs/endpoints/facts.html) API. The webhook will also update the memory variable that keeps track of how many times the user requested a fun fact.
 
 The point of the tutorial is to show you how the webhook reads the request data from the chatbot, and to show you the format of the data that must be returned to the chatbot.
@@ -34,7 +36,8 @@ As an added bonus, we will show how to deploy a Python script to SAP BTP. Specia
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a simple chatbot)]
+### Create a simple chatbot
+
 
 Create a bot that asks the user to select an animal to get a fun fact about.
 
@@ -74,10 +77,9 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
 5. Click **Train** at the top of the page.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Test the bot without webhook)]
+### Test the bot without webhook
+
 
 1. First, open the **Test** tab and test the bot. No matter what you type the intent will be `ask`.
 
@@ -93,11 +95,10 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
     ![Skill test](demobot-test-open-chat.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create Python project)]
+### Create Python project
+
 
 1. In the file explorer, create a new folder for the project and call it `chatbot-webhook`.
 
@@ -152,10 +153,9 @@ Your project should look like this:
 
 ![VS Code setup](vscode-setup.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Write Python endpoints)]
+### Write Python endpoints
+
 
 Now we will write the main part of the app, which creates the endpoints.
 
@@ -268,11 +268,10 @@ Now we will write the main part of the app, which creates the endpoints.
 
     ![VS Code test bot endpoint](vscode-test-bot2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Push Python script to SAP BTP)]
+### Push Python script to SAP BTP
+
 
 Use the Cloud Foundry CLI to deploy the script to SAP BTP.
 
@@ -316,10 +315,9 @@ And if you click the link (and open it in browser), you will be making a `GET` c
 
 ![Test endpoint](CLI-test-endpoint.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Point chatbot to webhook)]
+### Point chatbot to webhook
+
 
 Now that you deployed your webhook, let's attach it to the chatbot.
 
@@ -345,10 +343,9 @@ Now that you deployed your webhook, let's attach it to the chatbot.
 
     - Add a text message that says: **WOW!! You sure like these fun facts!!**
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test chatbot)]
+### Test chatbot
+
 
 Open a conversation with the bot, by entering **Hi**. The message when an animal is missing is displayed.
 
@@ -373,14 +370,12 @@ Click on the yellow **i** icon to see the JSON of the conversation. Scroll down 
 
 >For information on built-in variables, see [Runtime Data Accessible](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/858ae05dc3f743998ecc7d299e03f1b8.html?q=skill_occurrences).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---
