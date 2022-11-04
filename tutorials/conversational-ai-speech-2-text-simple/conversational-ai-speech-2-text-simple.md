@@ -1,21 +1,23 @@
 ---
-title: Add Speech-to-Text to Your Chatbot
-description: Let users talk with your SAP Conversational AI chatbot inside an SAPUI5 app using the speech-to-text APIs of the Web Client bridge.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-conversational-ai, programming-tool>sapui5, programming-tool>javascript, topic>machine-learning, topic>artificial-intelligence, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-conversational-ai
 ---
 
+# Add Speech-to-Text to Your Chatbot
+<!-- description --> Let users talk with your SAP Conversational AI chatbot inside an SAPUI5 app using the speech-to-text APIs of the Web Client bridge.
+
 ## Prerequisites
  - Any SAPUI5 app (feel free to build the simple SAPUI5 app described in the [2 Minutes of SAPUI5 playlist](https://www.youtube.com/watch?v=J9NMwsipMkw&list=PL6RpkC85SLQC4kuj22e4hw85Sa1pClD8y))
  - An SAP Conversational AI chatbot to deploy in your SAPUI5 app (you can simply use a new one with the Greetings skill)
  - Knowledge on how to deploy a chatbot to a web page with the Web Client. The tutorial [Deploy an SAP Conversational AI Chatbot on a Web Site](conversational-ai-deploy-web) describes a similar process for the Web Chat client.
 
-## Details
-### You will learn
+## You will learn
   - How to add speech-to-text to your chatbot inside SAPUI5
 
+## Intro
 The speech-to-text capabilities of SAP Conversational AI include:
 
 - Adding a microphone button and capturing the user's click.
@@ -26,9 +28,7 @@ The speech-to-text capabilities of SAP Conversational AI include:
 
 ![Example chatbot](openchatSmall.png)
 &nbsp;
-
-### Ways to implement speech to text
-
+## Ways to implement speech to text
 Basically, there are 4 ways to implement speech to text for SAP Conversational AI:
 
 - Without using the speech-to-text features of the chatbot, handling the voice recognition outside the chatbot, and sending a message to the chatbot using the [Web Client APIs](https://github.com/SAPConversationalAI/WebClientDevGuide#sendmessagemessage).
@@ -42,7 +42,8 @@ This tutorial will show an example of #3 -- all the features from SAP Conversati
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand the speech-to-text features)]
+### Understand the speech-to-text features
+
 
 The speech-to-text features include displaying a microphone within the chatbot in order to start talking with the bot (1).
 
@@ -57,10 +58,9 @@ Once the session is over, because the user stopped talking long enough or becaus
 ![Other features](features2.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Web Client script)]
+### Add Web Client script
+
 
 In your SAPUI5 view controller, in the `onAfterRendering` method, add the script tag for adding your Web Client to a web page. The script is available in the **Connect** tab when developing your chatbot.
 
@@ -114,11 +114,10 @@ At this point you should already be able to use the chatbot in your app -- just 
 
 Run the SAPUI5 app and use your chatbot.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add base class for speech-to-text functions)]
+### Add base class for speech-to-text functions
+
 
 Create a file called `webclientBridge.js` and add it to your `controller` folder.
 
@@ -176,10 +175,9 @@ SAP Conversational AI expects these speech-to-text functions in the object `wind
 > You could write your code in a single file. Separating the implementation can help if you will not load the implementation until later.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add implementation)]
+### Add implementation
+
 For the implementation, we are using a modified and simplified version of the `speech-to-text` npm module located at <https://www.npmjs.com/package/speech-to-text>, which wraps the browser's JavaScript Web Speech API.
 
 Create a file called `webclientBridgeImpl.js` and add it to your `controller` folder.
@@ -310,10 +308,9 @@ const sttSpeech = {
 window.webclientBridgeImpl = sttSpeech
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add references to JavaScript files)]
+### Add references to JavaScript files
+
 
 The JavaScript files we just added need to be loaded by the app, so we add dependencies in the SAPUI5 view controller to these files, too.
 
@@ -340,10 +337,9 @@ sap.ui.define([
         webclient,webclientBridge,webclientBridgeImpl) {
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Try out the app)]
+### Try out the app
+
 
 The app should be ready to run with speech-to-text in your chatbot.
 
@@ -367,10 +363,9 @@ The app should be ready to run with speech-to-text in your chatbot.
 
     ![Link text e.g., Destination screen](sttFinal.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Understand the flow)]
+### Understand the flow
+
 
 The way the code is structured, we are basically defining 3 objects:
 
@@ -384,8 +379,7 @@ Here's the basic flow:
 
 ![Flow](flow.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

@@ -1,11 +1,13 @@
 ---
-title: Deploy an SAP Conversational AI Chatbot on a Web Site
-description: Deploy an SAP Conversational AI chatbot on a web site and control the look and feel.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
+
+# Deploy an SAP Conversational AI Chatbot on a Web Site
+<!-- description --> Deploy an SAP Conversational AI chatbot on a web site and control the look and feel.
 
 ## Prerequisites
  - You have build a chatbot. You can use one of the following tutorials:
@@ -13,13 +15,13 @@ primary_tag: products>sap-conversational-ai
  - [Build Your First FAQ Chatbot](conversational-ai-faq-chatbot-beginner)
  - [Create Chatbot for Customers of Shipping Company](group.cai-shipping-bot)
 
-## Details
-### You will learn
+## You will learn
   - How to add a chat bot to a web site
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open your project)]
+### Open your project
+
 
 Go to [SAP Conversational AI](https://cai.tools.sap/signup), sign in, and open the project for the bot you want to deploy.
 
@@ -28,10 +30,9 @@ For example:
 ![Open project](OpenProject.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get web code)]
+### Get web code
+
 
 1. Go to the **Connect | Users Channels | Webchat**.
 
@@ -49,11 +50,10 @@ For example:
 
 5. Click **Save Changes**.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add code to web site)]
+### Add code to web site
+
 
 Add the code to your web site.
 
@@ -69,12 +69,11 @@ If you start to chat, you can see that the chatbot's replies are in light green.
 
 ![Chatting with bot on site](AddCode-website2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 4: ](Add menu)]
+### Add menu
+
 
 You can also add a static menu to the bot, so users will always have a set of links in case they need, for example, to check the documentation or reach out to support.
 
@@ -105,19 +104,17 @@ Click on the icon and you will see the menu.
 
 ![Menu displayed](menu-test2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
 
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 

@@ -1,31 +1,31 @@
 ---
-title: Create a Chatbot that Lets Customers Track Packages
-description: With SAP Conversational AI, create a chatbot that calls an API, in this case to let customers track their packages, and see how to make use of the memory, using SAP Conversational AI.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform  ]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Create a Chatbot that Lets Customers Track Packages
+<!-- description --> With SAP Conversational AI, create a chatbot that calls an API, in this case to let customers track their packages, and see how to make use of the memory, using SAP Conversational AI.
+
 ## Prerequisites
  - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
 
-## Details
-### You will learn
+## You will learn
   - How to create intents
   - How to create entities
   - How to fork intents and entities
   - How to trigger skills and define required data for those skills
   - How to access data in the memory
 
-
-### What you will build
-
+## What you will build
 You will build a bot so customers can:
 
   - Track a package
   - Price a package
 
+## Intro
 To track a package:
 
   - The customer will indicate that they want to track a parcel
@@ -39,14 +39,13 @@ To price package:
   - The customer will provide the address (France only) and the size of the package
   - The bot will check that the address is in France, and then call an API to retrieve a map of the location
   - The bot will display the map, and provide a price for the package, based on its size
-
-### In this tutorial
-
+## In this tutorial
 In this tutorial, you will start by creating a bot that understands the customer's intent to track a package, and understands when the user has provided a valid tracking number.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create skeleton bot)]
+### Create skeleton bot
+
 
 1. Go to [SAP Conversational AI](https://cai.tools.sap/) and log in.
 
@@ -65,10 +64,9 @@ In this tutorial, you will start by creating a bot that understands the customer
 3. Click **Create a Bot**.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create entity for parcel number)]
+### Create entity for parcel number
+
 
 Our bot must be able to extract the parcel number from within the conversation. Such data extracted from a conversation is defined as entities.
 
@@ -109,11 +107,10 @@ The tracking number is based on one of UPS's standards: 18 characters with const
 > SAP Conversational AI comes with built-in entities (called gold entities) for common data, like location, dates, and money values. For more information, see [List of Gold Entities](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/161cfefadfea4fbd9912cc38317ded57.html).
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add intents for yes and no)]
+### Add intents for yes and no
+
 
 Customers will have to indicate whether they accept or reject certain requests from the bot, so the bot needs to be able to recognize when a customer means **"Yes"** and when they mean **"No"**.
 
@@ -147,10 +144,9 @@ You do not have to create these yourself. Instead, you can fork them from others
 
 5. Repeat the above steps for the **@No** intent, located at [cai-adoption / ups-bot / intents / @no ](https://cai.tools.sap/cai-adoption/ups-bot/train/intents/no).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add intent for tracking parcel)]
+### Add intent for tracking parcel
+
 
 Customers will be indicating that they want information on a parcel, so you need to create an intent for that.
 
@@ -183,10 +179,9 @@ Again, you do not have to create this intent yourself, but you can fork an exist
 
     Feel free to add additional expressions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create skill for tracking parcel)]
+### Create skill for tracking parcel
+
 
 After you've determined that the user wants to track a package, you have to build a skill so the bot knows what to do in response to this intent.
 
@@ -194,7 +189,7 @@ After you've determined that the user wants to track a package, you have to buil
 
     Call the skill **`track-parcel`**, and specify that it is a **Business** skill, then click **Add**.
 
-    !![Create track parcel skill](createTrackParcelSkill.png)
+    <!-- border -->![Create track parcel skill](createTrackParcelSkill.png)
 
 2. Open the skill for editing by clicking on its name.
 
@@ -208,10 +203,9 @@ After you've determined that the user wants to track a package, you have to buil
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add requirement to skill (parcel-number))]
+### Add requirement to skill (parcel-number)
+
 
 The requirements for the **track-parcel** skill indicate the data the bot needs to extract from the conversation before executing the skill's action.
 
@@ -268,11 +262,10 @@ You will have several requirements. In this step, you will add the requirement f
 
     >Scripting is also used to manipulate data returned by API calls, as described in the tutorial [Use Scripting to Design a Chatbot Message from an API Response](conversational-ai-scripting-intro).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Add requirement to skill (yes/no) )]
+### Add requirement to skill (yes/no) 
+
 Now you'll add a second set of requirements -- the user's confirmation that they want to track the package.
 
 1. Add a second requirement by clicking the plus sign ( **+** ) -- the second one that when you hover it says **Add a new list of requirements**.
@@ -310,13 +303,12 @@ Now you'll add a second set of requirements -- the user's confirmation that they
 
         ![Yes and no reply](yesnoreply.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
 
-[ACCORDION-BEGIN [Step 8: ](Add action to skill)]
+### Add action to skill
+
 
 Add the action if the user says **No**.
 
@@ -347,10 +339,9 @@ Add the action if the user says **No**.
 
 If the customer says **Yes**, then you will make an API call and retrieve the information to display. You will code this in the next tutorial.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test the bot)]
+### Test the bot
+
 
 >If the **Test** panel is open, close it.
 
@@ -375,8 +366,7 @@ If the customer says **Yes** instead, for now the bot shows **No Reply** because
 
 > ![Fallback](Test4.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

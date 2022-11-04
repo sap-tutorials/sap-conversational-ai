@@ -1,18 +1,19 @@
 ---
-title: Deploy an SAP Conversational AI ChatBot on Facebook Messenger
-description: Create, test, and publish an SAP Conversational AI chatBot on Facebook Messenger.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Deploy an SAP Conversational AI ChatBot on Facebook Messenger
+<!-- description --> Create, test, and publish an SAP Conversational AI chatBot on Facebook Messenger.
+
 ## Prerequisites
  - An SAP Conversational AI account (as described in Step 1 of [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started))
  - A Facebook account
 
-## Details
-### You will learn
+## You will learn
   - How to create a Facebook Messenger app
   - How to set up your app for use as a chatbot
   - How to connect your SAP Conversational AI chatbot to your app
@@ -20,15 +21,15 @@ primary_tag: products>sap-conversational-ai
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create your chatbot)]
+### Create your chatbot
+
 First, create a chatbot by following the steps in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
 
 You'll need a bot so you can connect it to Facebook Messenger, and share with others.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get your Facebook page ready)]
+### Get your Facebook page ready
+
 Your chatbot will only be available for integration on a Facebook page -- not on your personal profile. This means you must either create a Facebook page or have an existing page that you can use with your bot.
 
 We assume your organization already has a page. If it does, continue to the next step.
@@ -37,7 +38,7 @@ If it doesn't, create one by doing the following:
 
 1. Click **Create a Page**.
 
-    !![Facebook pages](FacebookPages.png)
+    <!-- border -->![Facebook pages](FacebookPages.png)
 
 2. In the **Business or Brand** tile, click **Get Started**.
 
@@ -56,16 +57,15 @@ If it doesn't, create one by doing the following:
 
     > ![Username](Username.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a Facebook Messenger app)]
+### Create a Facebook Messenger app
+
 To publish your chatbot on your Facebook page, you need to create an app that connects SAP Conversational AI and your Facebook page.
 
 You do this at <https://developers.facebook.com/> (make sure you are logged into Facebook).
 
-!![Facebook developers](FacebookDevelopers.png)
+<!-- border -->![Facebook developers](FacebookDevelopers.png)
 
 First, choose **My Apps** at the top right of the screen and then choose **+ Create App**.
 
@@ -77,27 +77,25 @@ Second, give the app a name (e.g., **My Bot App**) and enter your email, then cl
 
 >Complete security check, if needed.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Set up your Facebook Messenger app)]
+### Set up your Facebook Messenger app
+
 1. On the left of your Facebook dashboard, choose the plus symbol after **PRODUCTS**.
 
 2. Find the **Messenger** tile, and choose **Set Up**.
 
-    !![Messenger](Messenger.png)
+    <!-- border -->![Messenger](Messenger.png)
 
 You now see **Messenger** under **PRODUCTS** on the left of the screen.
 
-!![Messenger products](MessengerProducts.png)
+<!-- border -->![Messenger products](MessengerProducts.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Get your Facebook page token)]
+### Get your Facebook page token
+
 1. On the left of your dashboard, choose **Settings** just below the **Messenger** product.
 
-    !![Settings](MessengerProductsSettings.png)
+    <!-- border -->![Settings](MessengerProductsSettings.png)
 
 2. In **Access Tokens** section, click **Add or Remove Pages**.
 
@@ -126,13 +124,12 @@ You now see **Messenger** under **PRODUCTS** on the left of the screen.
 
     Leave the page open. You will soon add the secret.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Get your app secret)]
+### Get your app secret
+
 On your Facebook dashboard, choose **Settings** > **Basic**.
 
-!![Basic settings](BasicSettings.png)
+<!-- border -->![Basic settings](BasicSettings.png)
 
 For privacy reasons, the app secret is hidden.
 
@@ -144,10 +141,9 @@ For privacy reasons, the app secret is hidden.
 
 3. Now that you pasted in the token and secret, click **Get Tokens**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Connect SAP Conversational AI to your Messenger app)]
+### Connect SAP Conversational AI to your Messenger app
+
 
 1. Go back to the Facebook dashboard and choose **Products** > **Messenger** > **Settings**.
 
@@ -181,10 +177,9 @@ For privacy reasons, the app secret is hidden.
 
     Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test your Messenger chatbot)]
+### Test your Messenger chatbot
+
 Your bot won't be publicly accessible until you get approval and publish it. But you can access it as the administrator/developer.
 
 Take your time to test the bot and make sure everything is working properly before releasing it to the world.
@@ -203,10 +198,9 @@ Take your time to test the bot and make sure everything is working properly befo
 
 >You can also grant test roles using **Roles** in the left-hand menu in your app page on Facebook for Developers.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Submit your bot to Facebook and publish it)]
+### Submit your bot to Facebook and publish it
+
 
 You've been testing your bot in development. Now you can make it public and everyone can talk with it.
 
@@ -233,17 +227,15 @@ You've been testing your bot in development. Now you can make it public and ever
 
     ![Link text e.g., Destination screen](Live.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
+### Test yourself
+
 Congratulations! Your Messenger chatbot is now online on Facebook. If necessary, you can modify it, and any changes you make will appear in your Messenger chat.
 
 Ask others to test
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
 
 
 

@@ -1,21 +1,23 @@
 ---
-title: Consume API Services and Call Webhooks from Your Chatbot
-description: Call APIs or webhooks from within your chatbot to retrieve information or create UI elements for your conversation.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Consume API Services and Call Webhooks from Your Chatbot
+<!-- description --> Call APIs or webhooks from within your chatbot to retrieve information or create UI elements for your conversation.
+
 ## Prerequisites
 - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
 
 
-## Details
-### You will learn
+## You will learn
   - How to call an API from your chatbot
   - How to call a webhook from your chatbot
 
+## Intro
 In this tutorial, you will create a simple chatbot to check if the user entered an animal or a location or both: if an animal, the chatbot will display a "fun fact" about the animal by calling an API; if a location, the chatbot will display a Google map by calling a webhook.
 
 - The **Consume API Service** option is used when you need to call an API service and capture the results to be used in other actions like messages or other API calls. You can send any body content you want, and the returned JSON is returned in the `api_service_response` variable, which you can then use in other actions.
@@ -32,7 +34,8 @@ For more information on making calls from your chatbot, see [Connect to External
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a simple chatbot)]
+### Create a simple chatbot
+
 
 You will create a very simple bot that lets the user specify an animal or a location.
 
@@ -66,10 +69,9 @@ You will create a very simple bot that lets the user specify an animal or a loca
 
     ![Location](demobot-test-location.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add a skill)]
+### Add a skill
+
 
 1. In the **Build** tab, create a skill called **answer**, and open it.
 
@@ -98,11 +100,10 @@ You will create a very simple bot that lets the user specify an animal or a loca
     ![Skill test](skill-test.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add an API Call)]
+### Add an API Call
+
 
 Now you will call an API to return an a fun fact about the animal you specify.
 
@@ -146,22 +147,20 @@ Now you will call an API to return an a fun fact about the animal you specify.
 
 >For more information on the chatbot syntax, see [Scripting with Variables](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/5b86debf32444658b29db44733d8d81a.html).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Test API call)]
+### Test API call
+
 
 Open **Chat with Your Bot**, and enter any text as well as animals.
 
 ![API test](api-test.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 5: ](Add webhook call)]
+### Add webhook call
+
 Now you will call a webhook designed to receive the chatbot conversation (as JSON) and do custom processing.
 
 >The webhook you will use is a demo Python webhook deployed to SAP Business Technology Platform. You can see the code for the webhook in this [blog](https://cai.tools.sap/blog/how-to-build-first-delivery-tracking-chatbot-sap-conversational-ai/).
@@ -189,10 +188,9 @@ Now you will call a webhook designed to receive the chatbot conversation (as JSO
 
 Notice that for the webhook you did not create a message. That's because the webhook provides the response in the syntax SAP Conversational AI understands -- see [Getting Response Using Webhook](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/7f06277acb1d46529daa9c5828a8a045.html). Of course, you could provide additional messages in this message group.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test webhook call)]
+### Test webhook call
+
 
 Open **Chat with Your Bot**, and enter a location, like **New York City**.
 
@@ -204,15 +202,13 @@ Open **Chat with Your Bot**, and enter a location, like **New York City**.
 
 > ![Base URL](webhookBaseURL.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 1: ](Test yourself)]
+### Test yourself
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 
 

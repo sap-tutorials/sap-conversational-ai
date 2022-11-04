@@ -1,11 +1,13 @@
 ---
-title: Add Speech-to-Text to Your Chatbot (with recorder)
-description: Let users talk with your SAP Conversational AI chatbot inside an SAPUI5 app using the speech-to-text APIs of the Web Client bridge, including the media recorder feature, and an external speech-to-text service.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-conversational-ai, programming-tool>sapui5, programming-tool>javascript, topic>machine-learning, topic>artificial-intelligence, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-conversational-ai
 ---
+
+# Add Speech-to-Text to Your Chatbot (with recorder)
+<!-- description --> Let users talk with your SAP Conversational AI chatbot inside an SAPUI5 app using the speech-to-text APIs of the Web Client bridge, including the media recorder feature, and an external speech-to-text service.
 
 ## Prerequisites
  - Any SAPUI5 app (feel free to build the simple SAPUI5 app described in the [2 Minutes of SAPUI5 playlist](https://www.youtube.com/watch?v=J9NMwsipMkw&list=PL6RpkC85SLQC4kuj22e4hw85Sa1pClD8y))
@@ -13,11 +15,11 @@ primary_tag: software-product>sap-conversational-ai
  - Knowledge on how to deploy a chatbot to a web page with the Web Client. The tutorial [Deploy an SAP Conversational AI Chatbot on a Web Site](conversational-ai-deploy-web) describes a similar process for the Web Chat client.
  - An account with [IBM Cloud](https://cloud.ibm.com/) with at least a free plan for the [Speech to Text service](https://cloud.ibm.com/catalog/services/speech-to-text)  
 
-## Details
-### You will learn
+## You will learn
   - How to add speech-to-text to your chatbot inside SAPUI5
   - How to use the built-in media recorder functionality of the chatbot
 
+## Intro
 The speech-to-text capabilities of SAP Conversational AI include:
 
 - Adding a microphone button and capturing the user's click.
@@ -28,9 +30,7 @@ The speech-to-text capabilities of SAP Conversational AI include:
 
 ![Example chatbot](openchatSmall.png)
 &nbsp;
-
-### Ways to implement speech to text
-
+## Ways to implement speech to text
 Basically, there are 4 ways to implement speech to text for SAP Conversational AI:
 
 - Without using the speech-to-text features of the chatbot, handling the voice recognition outside the chatbot, and sending a message to the chatbot using the [Web Client APIs](https://github.com/SAPConversationalAI/WebClientDevGuide#sendmessagemessage).
@@ -44,7 +44,8 @@ This tutorial will show an example of #4 -- all the features from SAP Conversati
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand the speech-to-text features)]
+### Understand the speech-to-text features
+
 
 The speech-to-text features include displaying a microphone within the chatbot in order to start talking with the bot (1).
 
@@ -59,10 +60,9 @@ Once the session is over, because the user stopped talking long enough or becaus
 ![Other features](features2.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Web Client script)]
+### Add Web Client script
+
 
 In your SAPUI5 view controller, in the `onAfterRendering` method, add the script tag for adding your Web Client to a web page. The script is available in the **Connect** tab when developing your chatbot.
 
@@ -116,11 +116,10 @@ At this point you should already be able to use the chatbot in your app -- just 
 
 Run the SAPUI5 app and use your chatbot.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add base class for speech-to-text functions)]
+### Add base class for speech-to-text functions
+
 
 Create a file called `webclientBridge.js` and add it to your `controller` folder.
 
@@ -178,10 +177,9 @@ SAP Conversational AI expects these speech-to-text functions in the object `wind
 >You could write your code in a single file. Separating the implementation can help if you will not load the implementation until later, that is, after the chatbot. It also helps modularize the code: 1 file for Web Client bridge methods, including the ones not related to speech-to-text, and than another for the speech-to-text implementation that I can change in and out.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add implementation)]
+### Add implementation
+
 Create a file called `webclientBridgeImpl.js` and add it to your `controller` folder. For the implementation, we are using IBM's Speech to Text service to do the transcription.
 
 >You need an account with IBM Cloud to use speech to text and to be able to complete this tutorial.
@@ -294,11 +292,10 @@ window.sapcai = {
 >We could have simplified everything and used a single file for all our code, without calls for the implementation.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Add URL and token)]
+### Add URL and token
+
 In the code in `webclientBridgeImpl.js`, add the service URL and token based on your account at IBM.
 
 You can check your account for your key and base API URL:
@@ -311,11 +308,10 @@ You can check your account for your key and base API URL:
 
 - **Token:** Based on your API key, and obtained as described in [Generating an IBM Cloud IAM token by using an API key](https://cloud.ibm.com/docs/account?topic=account-iamtoken_from_apikey).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Add references to JavaScript files)]
+### Add references to JavaScript files
+
 
 The JavaScript files we just added need to be loaded by the app, so we add dependencies in the SAPUI5 view controller to these files, too.
 
@@ -342,10 +338,9 @@ sap.ui.define([
         webclient,webclientBridge,webclientBridgeImpl) {
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Try out the app)]
+### Try out the app
+
 
 The app should be ready to run with speech-to-text in your chatbot.
 
@@ -369,17 +364,15 @@ The app should be ready to run with speech-to-text in your chatbot.
 
     ![Link text e.g., Destination screen](sttFinal.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
 
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 

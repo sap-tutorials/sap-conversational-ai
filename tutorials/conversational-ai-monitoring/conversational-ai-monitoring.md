@@ -1,23 +1,25 @@
 ---
-title: Improve Your Chatbot Accuracy by Monitoring User Activity
-description: Use the analytics features in the Monitor tab to view how users chat with your SAP Conversational AI chatbot, and adjust the way your chatbot responds accordingly.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-conversational-ai, topic>machine-learning, topic>artificial-intelligence, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Improve Your Chatbot Accuracy by Monitoring User Activity
+<!-- description --> Use the analytics features in the Monitor tab to view how users chat with your SAP Conversational AI chatbot, and adjust the way your chatbot responds accordingly.
+
 ## Prerequisites
 - You have already built the bot described in [Create Chatbot for Customers of Shipping Company](group.cai-shipping-bot).
 
-## Details
-### You will learn
+## You will learn
 - Why monitoring is crucial
 - How to check the Log Feed, and then reassign utterances to the correct intent
 - How to review Usage Metrics to see what intents, entities and skills are most and least used
 - How to run tests with Training Analytics to see how well your chatbot discerns intents
 
 
+## Intro
 The tools under the **Monitor** tab enable you to see how your users are using your bot and whether your chatbot both understands your users and can perform the tasks they want. With this information, you can improve your chatbot, for example, by adding intents, splitting intents, or updating the expressions of your intents.
 
 > ### Data set
@@ -27,7 +29,8 @@ A chatbot is only as good as its intents, the many expressions used to train the
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](The importance of monitoring)]
+### The importance of monitoring
+
 
 You want to monitor your chatbot to improve your data set -- in fact, when you deploy your chatbot, your work has only just begun.
 
@@ -56,12 +59,11 @@ From experience and research, the best tasks for a chatbot to automate are:
 
 >From monitoring, you should try to find those that fit this sweet spot.
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 1: ](Open Monitor tab)]
+### Open Monitor tab
+
 
 1. Open your shipping bot.
 
@@ -71,10 +73,9 @@ From experience and research, the best tasks for a chatbot to automate are:
 
     ![Monitor tab](monitoring-tab.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Reassign intents in Log Feed)]
+### Reassign intents in Log Feed
+
 The Log Feed lets you see all user utterances and the intents they were mapped to, so you can see if your chatbot properly understands your users. From the Log Feed you can also train your bot by telling it what intents should have been detected from each utterance.
 
 For more information, see [Log Feed](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/a31a132e87f54d159728b254dc062754.html).
@@ -135,11 +136,10 @@ For more information, see [Log Feed](https://help.sap.com/viewer/a4522a393d2b464
 
     ![Fix intent](monitoring-log-feed-fix-intent.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Check out Usage Metrics)]
+### Check out Usage Metrics
+
 In Usage Metrics, view which intents and entities are being detected the most, and which skills are being executed the most.
 
 For more information, see [Usage Metrics](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/ffd44659dd5c4120a4ca2b70a9c97b5d.html).
@@ -197,10 +197,9 @@ For more information, see [Usage Metrics](https://help.sap.com/viewer/a4522a393d
 
 >This is true because the best scenarios for chatbots are ones where the conversation is simple and minimal, and users quickly get what they need.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run benchmark test with Training Analytics)]
+### Run benchmark test with Training Analytics
+
 Training Analytics  helps you to build a great dataset -- that is, all the intents and entities that you create and train. Your bot must be well-trained (meaning your dataset is well-structured and incomplete) to be able to correctly understand messages from its users.
 
 Training Analytics takes a deeper dive into checking:
@@ -244,11 +243,10 @@ many times did it do so?
 >More tips for improving your intents/entities based on Training Analytics can be found at [Training Analytics](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/814005371d4b48fb8a8eaf297526e6f2.html).
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Review Conversation Log)]
+### Review Conversation Log
+
 You can browse the conversations that users are having with your bot -- every utterance and bot reply -- to get some idea if conversations are going smoothly.
 
 For more information, see [Conversation Logs](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/2237433a47f04fba8fa3e75cd3b01736.html).
@@ -267,12 +265,11 @@ For more information, see [Conversation Logs](https://help.sap.com/viewer/a4522a
 
     ![View conversation log](conv-logs-view.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 6: ](Update your chatbot)]
+### Update your chatbot
+
 
 After reviewing all the monitoring information, you can make changes to the chatbot. Here are some tips:
 
@@ -303,15 +300,13 @@ You want to make sure your bot understands the user's intents, so:
 
 Review info from openSAP course
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 
 

@@ -1,30 +1,33 @@
 ---
-title: Manage Your Chatbot with Versions and Environments
-description: Create versions and environments for your SAP Conversational AI chatbot to make it easier to manage the development process.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>machine-learning, software-product-function>sap-adaptive-server-enterprise, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
+# Manage Your Chatbot with Versions and Environments
+<!-- description --> Create versions and environments for your SAP Conversational AI chatbot to make it easier to manage the development process.
+
 ## Prerequisites
  - You have already built the bot described in [Create Chatbot for Customers of Shipping Company](group.cai-shipping-bot).
 
-## Details
-### You will learn
+## You will learn
   - The value of versions and environments in the chatbot building process
   - How to create a version
   - How to create an environments, and manage the version of an environment
   - How to push your chatbot into production
 
 
+## Intro
 In this tutorial, you'll create a second version of the shipping bot you created in [Create Chatbot for Customers of Shipping Company](group.cai-shipping-bot).
 
 You will then create 2 environments -- development and production -- and take the new version of the bot and deploy it to production, without needing to deploy anything on your landscape (like updating the web page).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What are versions?)]
+### What are versions?
+
 
 A version is a copy of your bot's training dataset and skills. Each version is independent of the others and can be managed individually. For example, you might want to create a new version prior to major updates to your training dataset or skills. Or you might want to create two or more variants of the same core bot for different audiences.
 
@@ -36,10 +39,9 @@ When you create a new bot, by default, your bot has only one main version, calle
 
 Note that when you make additional versions, copies of the **Train** and **Build** tabs are created. The **Connect** and **Monitor** tabs, and settings are shared among the versions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](What are environments?)]
+### What are environments?
+
 
 Your bot's environments represent a way to manage the development of the bot. Typically, you create environments for **Development**, **Testing** and **Production**, and then decide which version of the bot you want in each of the environments.
 
@@ -70,11 +72,10 @@ And instead of providing a single base URL per version, you can use system alias
     ![Aliases per environment](system2.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create version 2 of the shipping bot)]
+### Create version 2 of the shipping bot
+
 
 Now you will create a second version of the shipping bot.
 
@@ -96,10 +97,9 @@ Now you will create a second version of the shipping bot.
 
     ![New version](create-version3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Make change in version 2 of the shipping bot)]
+### Make change in version 2 of the shipping bot
+
 Now, you will make a change in version 2, which represents for this tutorial a development version where you are working on new features now yet ready to be deployed.
 
 1. In the version dropdown, select `v2`.
@@ -122,10 +122,9 @@ Now, you will make a change in version 2, which represents for this tutorial a d
 
     ![Add image](add-image2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the 2 versions)]
+### Test the 2 versions
+
 
 Since you are still in version 2, test that first. Go to the Chat Preview and enter **Hi**.
 
@@ -140,10 +139,9 @@ At the top, change the version to `v1`. Now enter **Hi** again, and you get just
 You now have 2 versions, the original and a new one with our experimental feature. In the next steps, you'll use environments to manage your development so you can push your development features into production.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create new environment)]
+### Create new environment
+
 
 You now will create a new environment called **Production**, so that when you have a new version that is tested you can easily move it to production -- without having to mess with your channel configuration.
 
@@ -171,10 +169,9 @@ You now will create a new environment called **Production**, so that when you ha
 
     ![Environments](env4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy Webchat with environment)]
+### Deploy Webchat with environment
+
 
 As an example of how to use the environment, you will deploy the production environment (version v1, without the image) via a Webchat channel.
 
@@ -219,10 +216,9 @@ Later, you will see how to quickly elevate v2 to production from development.
 >     You cannot uncheck the **Defaults** checkbox, nor can you delete the default environment.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Deploy bot on web page)]
+### Deploy bot on web page
+
 
 Create a web page.
 
@@ -250,10 +246,9 @@ Open the page, and then open in the bottom right the bot, and enter **hi**. The 
 
 ![Test channel](channel7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Upgrade version 2 to production)]
+### Upgrade version 2 to production
+
 
 Now you will simulate that development is complete and you want to push the new version to production.
 
@@ -270,14 +265,12 @@ Now you will simulate that development is complete and you want to push the new 
     ![New production](prod2.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

@@ -1,22 +1,24 @@
 ---
-title: Let Your Web App Interact with Your Chatbot
-description: Use the Web Client APIs to send messages, intercept messages, change the memory and other chatbot actions from within your SAPUI5 app.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-conversational-ai, programming-tool>sapui5, programming-tool>javascript, topic>machine-learning, topic>artificial-intelligence]
 primary_tag: software-product>sap-conversational-ai
 ---
 
+# Let Your Web App Interact with Your Chatbot
+<!-- description --> Use the Web Client APIs to send messages, intercept messages, change the memory and other chatbot actions from within your SAPUI5 app.
+
 ## Prerequisites
 - Any SAPUI5 app (feel free to build the simple SAPUI5 app described in the [2 Minutes of SAPUI5 playlist](https://www.youtube.com/watch?v=J9NMwsipMkw&list=PL6RpkC85SLQC4kuj22e4hw85Sa1pClD8y))
 - An SAP Conversational AI chatbot to deploy in your SAPUI5 app (you can simply use a new one with the Greetings skill)
 - Knowledge on how to deploy a chatbot to a web page with the Web Client. The tutorial [Deploy an SAP Conversational AI Chatbot on a Web Site](conversational-ai-deploy-web) describes a similar process for the Web Chat client.
 
-## Details
-### You will learn
+## You will learn
   - How to use the Web Client APIs
   - How to use the Web Client Bridge APIs
 
+## Intro
 The Web Client APIs let you control your chatbot from within your web application, including:
 - Open and close the chatbot
 - Send a message to the chatbot (as if it came from your user)
@@ -32,7 +34,8 @@ The Web Client Bridge APIs let you:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Web Client script)]
+### Add Web Client script
+
 
 In your SAPUI5 view controller, in the `onAfterRendering` method, add the script tag for adding your Web Client to a web page. The script is available in the **Connect** tab when developing your chatbot.
 
@@ -87,10 +90,9 @@ At this point you should already be able to use the chatbot in your app -- just 
 Run the SAPUI5 app and use your chatbot.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add footer toolbar)]
+### Add footer toolbar
+
 Add a footer to your view so you can activate the various Web Client APIs.
 
 Inside the `<Page>` tag after the `<content>` section, add the following `<footer>` section.
@@ -125,10 +127,9 @@ This now adds the following footer to your view:
 >The theme selector will be empty because you did not create a data model with all the themes. You will do this in the next step.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add data model for themes)]
+### Add data model for themes
+
 
 Put the following in the `onInit` method. This will add the theme options to the `<select>` element.
 
@@ -185,10 +186,9 @@ You can refresh the app and now there will be theme options.
 
 ![Theme options](themes.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add event handlers)]
+### Add event handlers
+
 
 In the view controller, add the following methods:
 
@@ -219,10 +219,9 @@ onPressOpen: function (evt) {
  },
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Try the web client APIs)]
+### Try the web client APIs
+
 
 Try out the Web Client methods.
 
@@ -238,10 +237,9 @@ Try out the Web Client methods.
 
     ![Change theme](themechange.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Set up Web Client bridge)]
+### Set up Web Client bridge
+
 
 Create a file called `webclientbridge.js` and add it to your `controller` folder.
 
@@ -272,10 +270,9 @@ sap.ui.define([
 
 In the following steps, you will add Web client listeners inside the `webclientBridge` object for various tasks.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Change memory)]
+### Change memory
+
 
 Add the following method to the `webclientBridge` object:
 
@@ -296,10 +293,9 @@ On subsequent calls, the memory is updated from this Web Client Bridge function.
 ![Update memory](updatememory.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Capture messages)]
+### Capture messages
+
 
 Add the following method to the `webclientBridge` object:
 
@@ -327,10 +323,9 @@ The above code will now display an alert for each message, indicating if it was 
 You can inspect the payload object in the method to see what other information is provided.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Capture data messages)]
+### Capture data messages
+
 
 Capturing messages lets the chatbot communicate with the web client. But what if the chatbot wants to communicate but not display any message to the user.
 
@@ -369,13 +364,12 @@ In such cases, the chatbot can send a "client data" message, which sends a JSON 
 
 See at the end of some use cases for this feature.
 
-[DONE]
-[ACCORDION-END]
 
 
 
 
-[ACCORDION-BEGIN [Step 10: ](Set client info and preferences)]
+### Set client info and preferences
+
 The following two methods are called at the start of the conversation, and used to set the theme (including some texts) and the client information, which is accessible to the chatbot.
 
 Add the following method to the `webclientBridge` object:
@@ -425,13 +419,12 @@ The preferences let you set some of the color settings, as well as texts and ico
 >![Preferences](prefs.png)
 >&nbsp;
 
-[DONE]
-[ACCORDION-END]
 
 
 
 
-[ACCORDION-BEGIN [Step 11: ](2 use cases)]
+### 2 use cases
+
 
 A use case originally created for the Web Chat was to allow a user to type into the chatbot whether to move or zoom a Google map embedded in the web app. The chatbot interprets what the user wants and sends the results as a message, and the web page intercepts that message and calls the appropriate Google API to adjust the map.
 
@@ -444,7 +437,6 @@ Another use case was with the recent [SAP Community Coding Challenge](https://bl
 ![Get avatar](codechallenge.gif)
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
 
 ---

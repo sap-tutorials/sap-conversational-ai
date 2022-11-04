@@ -1,11 +1,13 @@
 ---
-title: Call SAP Conversational AI API Using OAuth
-description: Retrieve an OAuth token and use it to call the SAP Conversational AI API, using Python to create a web service.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>security, topic>python]
 primary_tag: products>sap-conversational-ai
 ---
+
+# Call SAP Conversational AI API Using OAuth
+<!-- description --> Retrieve an OAuth token and use it to call the SAP Conversational AI API, using Python to create a web service.
 
 ## Prerequisites
 - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
@@ -16,15 +18,13 @@ primary_tag: products>sap-conversational-ai
 - [Flask-Caching](https://flask-caching.readthedocs.io) package for Python
 - You have created a chatbot that you would like to call. If not, create a new chatbot with the **Greetings** skill.
 
-## Details
-### You will learn
+## You will learn
   - How to retrieve an OAuth token for use with SAP Conversational AI API
   - How to call SAP Conversational AI API via OAuth
 
+## Intro
 This tutorial is a companion to the tutorial [Call SAP Conversational AI API Using OAuth (Postman)](conversational-ai-api-oauth-postman), which lets you just test the APIs via a simple Postman collection. Here, you will make a more sophisticated simulation, including building a web server and using caching to store the OAuth token.
-
-### What you will build
-
+## What you will build
 This tutorial demonstrates the basics for calling the SAP Conversational AI API using an OAuth token, which is the required way for all new chatbots. The `request` endpoint of the Runtime API is called, which sends an utterance only to the NLP for understanding, but the principles are the same if you used the `dialog` endpoint.
 
 To make things more interesting, you will create a simple web server that:
@@ -37,7 +37,8 @@ To make things more interesting, you will create a simple web server that:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Python project)]
+### Create Python project
+
 
 1. In the file explorer, create a new folder for the project and call it `chatbot-api`.
 
@@ -54,10 +55,9 @@ Your project should look like this:
 ![Project start](project-start.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create config file and store credentials)]
+### Create config file and store credentials
+
 
 1. In your project, create a file called `configproperties.py`.
 
@@ -93,11 +93,10 @@ Now your `configproperties.py` file should have your credentials.
 
 ![Config file](config.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create main Python file)]
+### Create main Python file
+
 
 1. In your project, create a file called `chatbot-api.py`.
 
@@ -131,10 +130,9 @@ The above is standard code, and will create the localhost server on port 5000. A
 >All subsequent code goes where it is marked: `#Other code will go here`
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add configuration to enable caching of token)]
+### Add configuration to enable caching of token
+
 
 Add the following to enable the caching of the OAuth token:
 
@@ -151,11 +149,10 @@ cache = Cache(app)
 For more information on configuring and using caching, see [Flask-Caching](https://flask-caching.readthedocs.io/).
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Add function to get OAuth token)]
+### Add function to get OAuth token
+
 
 Add the following function to retrieve the OAuth token:
 
@@ -178,10 +175,9 @@ Notice the following:
 
 >Ideally, the caching timeout would not be hard-coded, but would be retrieved from within the JSON when you get the OAuth token, in the `expires_in` field.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add function to call API)]
+### Add function to call API
+
 Add the following function to create an endpoint, and when called, to call the SAP Conversational AI API and return the intent that was detected.
 
 ```Python
@@ -206,10 +202,9 @@ Notice that you must send the OAuth token as bearer authorization token, and the
 
 The format of the response for the Runtime `request` and `dialog` APIs are described under [Runtime API](https://reverseproxy.cai.tools.sap/docs/api-reference/#runtime-api).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test the app)]
+### Test the app
+
 
 1. Start the server by clicking the **Run in Terminal** icon.
 
@@ -249,13 +244,11 @@ If you look at the terminal, you will see that we retrieved the token in the fir
 
 ![Terminal](terminal.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

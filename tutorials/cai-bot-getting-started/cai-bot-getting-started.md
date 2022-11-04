@@ -1,14 +1,15 @@
 ---
-title: Build Your First Chatbot with SAP Conversational AI
-description: Create a simple chatbot that can recognize greetings, understand when asked for a joke, provide a joke, and recognize the user's reaction to the joke.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
 primary_tag: products>sap-conversational-ai
 ---
 
-## Details
-### You will learn
+# Build Your First Chatbot with SAP Conversational AI
+<!-- description --> Create a simple chatbot that can recognize greetings, understand when asked for a joke, provide a joke, and recognize the user's reaction to the joke.
+
+## You will learn
   - How to get an account with SAP Conversational AI
   - How to create a chatbot project
   - How to train your chatbot (to understand people)
@@ -16,7 +17,8 @@ primary_tag: products>sap-conversational-ai
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create SAP Conversational AI account)]
+### Create SAP Conversational AI account
+
 
 
 
@@ -28,12 +30,11 @@ Follow the instructions for creating an account.
 
 You will get an email with a link to validate your account.
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Create new bot project)]
+### Create new bot project
+
 
 1. Do one of the following:
 
@@ -82,11 +83,10 @@ You will get an email with a link to validate your account.
 
 3. Click **Create a bot**.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](The 4 stages of a bot's life)]
+### The 4 stages of a bot's life
+
 
 There are 4 stages in your bot's life:
 
@@ -106,11 +106,11 @@ The 4 phases are represented in the bot project by the 4 tabs.
 
 ![4 stages](5tabs.png)
 
-[VALIDATE_6]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Fork intent)]
+
+### Fork intent
+
 
 Now we will work in the **Train** tab, where will build intents. Remember, intents are the things people want to tell our bot. Within an intent, we indicate all the possible expressions that a person might use to communicate that intent.
 
@@ -136,11 +136,10 @@ As SAP Conversational AI is collaborative, you do not have to re-create each int
 
     ![Joke intent](ExploreJokeIntent.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create new intents)]
+### Create new intents
+
 
 You will be able to reuse many, many intents created by others. But there are times you will want to create your own.
 
@@ -171,11 +170,10 @@ You will be able to reuse many, many intents created by others. But there are ti
     - Click **Create Intent**.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Add expressions)]
+### Add expressions
+
 
 Now that you have created 2 intents, we need to add expressions -- things people might say if they had that intent. A golden rule would be to add **at least 30 expressions** to an intent, and ideally more than 50.
 
@@ -211,10 +209,9 @@ Put yourself in the shoes of the people talking to your bot. What could they pos
     Try harder, that was a very bad joke.
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test bot)]
+### Test bot
+
 
 We want to now test to see if the bot can detect when a user says something matching the intent we created.
 
@@ -249,10 +246,9 @@ We want to now test to see if the bot can detect when a user says something matc
 
 If the bot did not recognize the intent (or selected the wrong intent), you will need to train your bot some more by adding additional expressions (Step 6).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Manage conversation flow with skills)]
+### Manage conversation flow with skills
+
 
 Now that your bot knows how to understand people who talk to it, it's time to give your robot some skills.
 
@@ -288,10 +284,9 @@ If you navigate through the tabs, you'll see that the **Greetings** skill is str
 
   - It has two possible actions: If the `@greetings` intent is matched, it sends a random welcoming message chosen from a list. If the `@goodbye` intent is matched, it does the same thing, but picks the message from a different list.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create new skill)]
+### Create new skill
+
 
 Now let's build a skill to tell a joke.
 
@@ -348,10 +343,9 @@ Now let's build a skill to tell a joke.
 
 9. Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test by chatting with bot)]
+### Test by chatting with bot
+
 
 
 
@@ -371,17 +365,15 @@ Click on the bottom-right yellow button **Chat Preview** and start sending messa
 
 ![Chatting](StartChat-chat.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
+### Test yourself
+
 Congratulations! You have created your first bot.
 
 In later tutorials, you will learn how to deploy your bot and monitor it so it gets smarter and smarter.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 
