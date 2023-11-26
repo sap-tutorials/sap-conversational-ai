@@ -75,8 +75,6 @@ You will get an email with a link to validate your account.
 
         - **Store**.
 
-        - **Non-vulnerable**.
-
       - For **Bot visibility**, select **Public**.
 
       ![New bot form](NewBotForm.png)
@@ -147,7 +145,7 @@ You will be able to reuse many, many intents created by others. But there are ti
 
 2. Create an intent for recognizing good reactions to jokes.
 
-    - Click **Create**.
+    - Click **New Intent**.
 
       ![Click Create](CreateButtonIntent.png)
 
@@ -315,7 +313,7 @@ Now let's build a skill to tell a joke.
 
     ![Skill trigger condition](SkillCondition.png)
 
-    - Click on the **+** sign -- **Add a new list of conditions** -- and repeat the above for `@laughs` and `@lame` intents.
+    - Click on the **+** sign -- **Add a new condition** below, not to the side -- and repeat the above for `@laughs` and `@lame` intents.
 
     - Change the logical conditions to `Or` between each `If` statement, simply by clicking `And`.
 
