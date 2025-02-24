@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "sap-conversational-ai"
+SPDX-PackageSupplier = "Wroblewski, Daniel (daniel.wroblewski@sap.com)"
+SPDX-PackageDownloadLocation = "https://github.com/sap-tutorials/sap-conversational-ai"
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 SAP SE or an SAP affiliate company and https://github.com/sap-tutorials/sap-conversational-ai contributors"
+SPDX-License-Identifier = "CC-BY-4.0"
