@@ -115,21 +115,21 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 
 3. To the request, add the URL:
 
-    ```URL
-    https://postman-echo.com/get
-    ```
+   ```URL
+   https://postman-echo.com/get
+   ```
 
     This is a dummy URL and let's us perform a script before calling any other APIs.
 
 4. To the request, add the following to the **Pre-request Script**:
 
-    ```JavaScript
-    if (pm.environment.get("oauthtoken") != null) {
-      postman.setNextRequest("request")
-      pm.environment.set("retry", "true");
-      console.log("HAVE TOKEN")
-    }
-    ```
+   ```JavaScript
+   if (pm.environment.get("oauthtoken") != null) {
+     postman.setNextRequest("request")
+     pm.environment.set("retry", "true");
+     console.log("HAVE TOKEN")
+   }
+   ```
 
     This script checks if there already exists an OAuth token. If a token exists, we skip the call to get a token and we create a flag that indicate that if the API call fails we want to try again (after we retrieve a new token, for example, because it has expired).
 
@@ -146,9 +146,9 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 
 2. To the request, add the URL:
 
-    ```URL
-    https://sapcai-community.authentication.eu10.hana.ondemand.com/oauth/token
-    ```
+   ```URL
+   https://sapcai-community.authentication.eu10.hana.ondemand.com/oauth/token
+   ```
 
 3. To the request, under **Authorization**, set the type **Basic Auth**.
 
@@ -170,9 +170,9 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 
 5. To the request, add the following to the **Pre-request Script**:
 
-    ```JavaScript
-    pm.environment.set("retry", "false");
-    ```
+   ```JavaScript
+   pm.environment.set("retry", "false");
+   ```
 
     This indicates that we have retrieved a new OAuth token, and once we try the API call, we do not want to retry (with a newer OAuth token).
 
@@ -180,12 +180,12 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 
 6. To the request, add the following to the **Tests**:
 
-    ```JavaScript
-    bodyData = JSON.parse(responseBody);
-    token = bodyData.access_token;
-    pm.environment.set("oauthtoken",token);
-    console.log("GOT TOKEN");
-    ```
+   ```JavaScript
+   bodyData = JSON.parse(responseBody);
+   token = bodyData.access_token;
+   pm.environment.set("oauthtoken",token);
+   console.log("GOT TOKEN");
+   ```
 
     This retrieves the token and stores in the environment, for use with the API call.
 
@@ -204,9 +204,9 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 
 2. To the request, add the URL:
 
-    ```URL
-    https://api.cai.tools.sap/train/v2/request
-    ```
+   ```URL
+   https://api.cai.tools.sap/train/v2/request
+   ```
 
 3. To the request, under **Authorization**, set the type **Bearer Token**.
 
@@ -226,32 +226,32 @@ Keep the **Manage Environments** window open. In the next step we will get your 
 
     Set the type to `raw`, and add the following body:
 
-    ```JSON
-    {   
-          "text" : "Hi"
-    }
-    ```
+   ```JSON
+   {   
+         "text" : "Hi"
+   }
+   ```
 
     This is the utterance to send to the NLP, and should return the `greeting` intent.
 
 6. To the request, add the following to the **Tests**:
 
-    ```JavaScript
-    if (pm.environment.get("retry")=="true" && pm.response.code ==401) {
-        postman.setNextRequest("get-oath-credentials")
-    }
+   ```JavaScript
+   if (pm.environment.get("retry")=="true" && pm.response.code ==401) {
+       postman.setNextRequest("get-oath-credentials")
+   }
 
-    // Check if the request was successful (OAuth token was OK)
-    pm.test("Request succeeded", function () {
-        pm.response.to.have.status(200);
-    });
+   // Check if the request was successful (OAuth token was OK)
+   pm.test("Request succeeded", function () {
+       pm.response.to.have.status(200);
+   });
 
-    // Test if the correct intent was returned
-    pm.test("Is intent correct", function () {
-        var jsonData = pm.response.json();
-        pm.expect(jsonData.results.intents[0].slug).to.eql("greetings");
-    });
-    ```
+   // Test if the correct intent was returned
+   pm.test("Is intent correct", function () {
+       var jsonData = pm.response.json();
+       pm.expect(jsonData.results.intents[0].slug).to.eql("greetings");
+   });
+   ```
 
     This code starts by checking if we had an authentication error and whether we want to retry in such a case -- if so, we tell Postman to retrieve the OAuth token.
 

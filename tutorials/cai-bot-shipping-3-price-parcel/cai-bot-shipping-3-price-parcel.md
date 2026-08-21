@@ -66,7 +66,7 @@ So create an entity for the parcel size. But in this case, create a restricted e
 
     - Click **Add New Pair**, enter **`name`** and **`null`** (the default value), and then press **Enter**.
 
-        <!-- border -->![Add pair](Enrich_Pair.png)
+        ![Add pair](Enrich_Pair.png)
 
     - Click again  **Add New Pair**, enter **`price`** and **`null`**, and then press **Enter**.
 
@@ -122,9 +122,9 @@ You can also fork this intent.
 
     Enter the following:
 
-    ```Conversation
-    I want to send a parcel to 102 place Stanislas, 44100 Nantes with L size box
-    ```
+   ```Conversation
+   I want to send a parcel to 102 place Stanislas, 44100 Nantes with L size box
+   ```
 
     You see that the bot detected the intent of the customer -- to ship a package -- and was able to extract `#location` (a built-in entity) and `#parcel-size` (the entity you just created).
 
@@ -254,9 +254,9 @@ You can open a chat and test this, by entering: **How much to send package to Pa
 
 3. For the message, add:
 
-    ```Message
-    Are you sure?
-    ```
+   ```Message
+   Are you sure?
+   ```
 
 4. Click **Add Quick Reply** twice, and create a reply for **Yes** and a reply for **No**.
 
@@ -283,9 +283,9 @@ Finally, you want to display to the customer the results of the query.
 
 3. Click **Send Message | Text**, and enter the following for the message:
 
-    ```Message
-    A {{memory.parcel-size.name}} parcel sent to {{memory.location.formatted}} will cost ${{memory.parcel-size.price}}
-    ```
+   ```Message
+   A {{memory.parcel-size.name}} parcel sent to {{memory.location.formatted}} will cost ${{memory.parcel-size.price}}
+   ```
 
     Click **Save**.
 

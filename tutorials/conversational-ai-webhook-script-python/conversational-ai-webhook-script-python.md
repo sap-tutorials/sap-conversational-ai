@@ -69,11 +69,11 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
     Expand the requirement and click **New Replies -- If #animal is missing**, add the following text message, and then click **Save** and **Back**:
 
-    ```Message
-    Type an animal and I will get you a fun fact about it.
+   ```Message
+   Type an animal and I will get you a fun fact about it.
 
-    But I am only familiar with certain animals.
-    ```
+   But I am only familiar with certain animals.
+   ```
 
 5. Click **Train** at the top of the page.
 
@@ -116,35 +116,35 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
     You must change the host name below to a unique name. The rest of the tutorial assumes the host name below, but everywhere you must change it (e.g., URL to API).
 
-    ```Text
-    applications:
-    - name: dbw-catfacts
-      memory: 128M
-      command: python chatbot-webhook-test.py
-    ```
+   ```Text
+   applications:
+   - name: dbw-catfacts
+     memory: 128M
+     command: python chatbot-webhook-test.py
+   ```
 
     #### `Procfile`
 
-    ```Text
-    web: python chatbot-webhook.py
-    ```
+   ```Text
+   web: python chatbot-webhook.py
+   ```
 
     #### `requirements.txt`
 
     This file contains dependencies in our project: Flask to create endpoints and requests to call other APIs from within our app.
 
-    ```Text
-    Flask
-    requests
-    ```
+   ```Text
+   Flask
+   requests
+   ```
 
     #### `runtime.txt`
 
     Make sure to use a version currently supported by SAP BTP. At the time of the writing of this tutorial (December 2020), the version below worked.
 
-    ```Text
-    python-3.x
-    ```
+   ```Text
+   python-3.x
+   ```
 
     #### `static` (folder)
     Create the folder `static`. Download the SAP Conversational AI [icon](https://www.sap.com/content/dam/application/imagelibrary/pictograms/283000/283370-pictogram-purple.svg) and place it in the folder.
@@ -163,28 +163,28 @@ Now we will write the main part of the app, which creates the endpoints.
 
 2. Add the following code -- which adds dependencies and creates a default endpoint, which returns a nice HTML page with a cool image, so you will be able to make sure the deployment was successful.
 
-    ```Python
-    from flask import Flask, request, jsonify
-    import os
-    import json
-    import datetime
-    import requests
+   ```Python
+   from flask import Flask, request, jsonify
+   import os
+   import json
+   import datetime
+   import requests
 
-    app = Flask(__name__)
-    cf_port = os.getenv("PORT")
+   app = Flask(__name__)
+   cf_port = os.getenv("PORT")
 
-    # Only get method by default
-    @app.route('/')
-    def hello():
-        return '<h1>SAP Conversational AI</h1><body>The animal facts webhook for use in SAP Conversational AI chatbots.<br><img src="static/283370-pictogram-purple.svg" width=260px></body>'
+   # Only get method by default
+   @app.route('/')
+   def hello():
+       return '<h1>SAP Conversational AI</h1><body>The animal facts webhook for use in SAP Conversational AI chatbots.<br><img src="static/283370-pictogram-purple.svg" width=260px></body>'
 
-    if __name__ == '__main__':
-    	if cf_port is None:
-    		app.run(host='0.0.0.0', port=5000, debug=True)
-    	else:
-    		app.run(host='0.0.0.0', port=int(cf_port), debug=True)
+   if __name__ == '__main__':
+   	if cf_port is None:
+   		app.run(host='0.0.0.0', port=5000, debug=True)
+   	else:
+   		app.run(host='0.0.0.0', port=int(cf_port), debug=True)
 
-    ```
+   ```
 
     Save the file.
 
@@ -200,50 +200,50 @@ Now we will write the main part of the app, which creates the endpoints.
 
     This endpoint takes the data from the chatbot, makes the call to the API to get the fun fact, and then returns the next message to the chatbot.
 
-    ```Python
-    @app.route('/bot', methods=['POST'])
-    def bot():
-      # Get the request body, and determine the dog and memory
-      try:
-        bot_data = json.loads(request.get_data())
-        animal = bot_data['conversation']['memory']['animal']['raw']
-        memory = bot_data['conversation']['memory']
-      except:
-        animal = "dog"
-        memory = json.loads("{}")
+   ```Python
+   @app.route('/bot', methods=['POST'])
+   def bot():
+     # Get the request body, and determine the dog and memory
+     try:
+       bot_data = json.loads(request.get_data())
+       animal = bot_data['conversation']['memory']['animal']['raw']
+       memory = bot_data['conversation']['memory']
+     except:
+       animal = "dog"
+       memory = json.loads("{}")
 
-      # Get the fun fact
-      url = "https://cat-fact.herokuapp.com/facts/random?animal_type=" + animal + "&amount=1"
-      nodata = {"text" : "No data"}
+     # Get the fun fact
+     url = "https://cat-fact.herokuapp.com/facts/random?animal_type=" + animal + "&amount=1"
+     nodata = {"text" : "No data"}
 
-      # In case the API does not work after 8 seconds, we return "no data"
-      try:
-        r = requests.get(url, timeout=8)
-        fact_data = json.loads(r.content)
-      except:
-        fact_data = nodata
+     # In case the API does not work after 8 seconds, we return "no data"
+     try:
+       r = requests.get(url, timeout=8)
+       fact_data = json.loads(r.content)
+     except:
+       fact_data = nodata
 
-      # Increment the # of times this has been called
-      if 'funfacts' in memory:
-         memory['funfacts'] += 1
-      else:
-         memory['funfacts'] = 1
+     # Increment the # of times this has been called
+     if 'funfacts' in memory:
+        memory['funfacts'] += 1
+     else:
+        memory['funfacts'] = 1
 
-      # Return message to display (replies) and update memory
-      return jsonify(
-        status=200,
-        replies=[
-        {
-          'type': 'text',
-          'content': fact_data['text']
-        }
-        ],
-        conversation={
-          'memory': memory
-        }
+     # Return message to display (replies) and update memory
+     return jsonify(
+       status=200,
+       replies=[
+       {
+         'type': 'text',
+         'content': fact_data['text']
+       }
+       ],
+       conversation={
+         'memory': memory
+       }
 
-      )
-    ```
+     )
+   ```
 
     Save the file.
 
@@ -253,16 +253,16 @@ Now we will write the main part of the app, which creates the endpoints.
 
     Test it again but this time sending the following (raw) body, to simulate as if the chatbot were sending the request:
 
-    ```JSON
-    {
-      "conversation": {
-        "memory": {
-          "animal" : {"raw" : "snail"},
-          "funfacts": 1
-        }
-      }
-    }
-    ```
+   ```JSON
+   {
+     "conversation": {
+       "memory": {
+         "animal" : {"raw" : "snail"},
+         "funfacts": 1
+       }
+     }
+   }
+   ```
 
     Now, the API call uses the animal from the body (i.e., snail) and updates the `funfacts` variable in the memory.
 
@@ -281,17 +281,17 @@ You will need your SAP BTP Cloud Foundry endpoint and org name, which you can se
 
 1. Open a command prompt in the folder containing your Python project, and set the Cloud Foundry API URL.
 
-    ```CLI
-    cf api https://api.cf.eu10.hana.ondemand.com
-    ```
+   ```CLI
+   cf api https://api.cf.eu10.hana.ondemand.com
+   ```
 
     ![CLI](CLI.png)
 
 2. Log in by entering the following command and entering your credentials:
 
-    ```CLI
-    cf login
-    ```
+   ```CLI
+   cf login
+   ```
 
 3. Select your CF org (if you have multiple orgs in that endpoint).
 
@@ -299,9 +299,9 @@ You will need your SAP BTP Cloud Foundry endpoint and org name, which you can se
 
 4. Now push the application, and call it `catfacts`:
 
-    ```CLI
-    cf push catfacts
-    ```
+   ```CLI
+   cf push catfacts
+   ```
 
 This should about a minute, with a lot of output in the command screen. Once finished, you should now have the application deployed. Go to your Cloud Foundry space, under **Applications**.
 

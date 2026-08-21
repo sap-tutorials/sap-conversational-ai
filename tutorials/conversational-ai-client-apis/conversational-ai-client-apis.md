@@ -343,20 +343,20 @@ In such cases, the chatbot can send a "client data" message, which sends a JSON 
 
 3. Replace the `onMessage` function to the one below.
 
-    ```JavaScript
-    // called on every message
-    onMessage: (payload) => {
-        payload.messages.map(message => {
-            if (message.attachment.type == 'client_data') {
-                message.attachment.content.elements.map(pair => {
-                    if (pair.key == 'emoji') {
-                        alert("Here is a special gift for you:\n\n" + pair.value)
-                    }
-                })
-            }
-        });
-    },
-    ```
+   ```JavaScript
+   // called on every message
+   onMessage: (payload) => {
+       payload.messages.map(message => {
+           if (message.attachment.type == 'client_data') {
+               message.attachment.content.elements.map(pair => {
+                   if (pair.key == 'emoji') {
+                       alert("Here is a special gift for you:\n\n" + pair.value)
+                   }
+               })
+           }
+       });
+   },
+   ```
 
     The above code will now display an alert to the user with the emoji the chatbot sent -- without displaying any extra message to the user in the chatbot (it will still send the greeting message).
 

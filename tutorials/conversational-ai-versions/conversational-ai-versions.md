@@ -114,9 +114,9 @@ Now, you will make a change in version 2, which represents for this tutorial a d
 
 4. Select **Image**, and add the following URL for the image:
 
-    ```URL
-    https://images.unsplash.com/photo-1596443686812-2f45229eebc3
-    ```
+   ```URL
+   https://images.unsplash.com/photo-1596443686812-2f45229eebc3
+   ```
 
     Click **Save**.
 

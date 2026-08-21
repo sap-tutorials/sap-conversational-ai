@@ -187,12 +187,12 @@ Put yourself in the shoes of the people talking to your bot. What could they pos
 
     Here are some examples for the `laughs` intent you added:
 
-    ```
-    Hahaha that's hilarious
-    ROFL you're good!
-    That, my friend, was an amazing joke.
-    I haven't laughed that much in a long time!
-    ```
+   ```
+   Hahaha that's hilarious
+   ROFL you're good!
+   That, my friend, was an amazing joke.
+   I haven't laughed that much in a long time!
+   ```
 
     For a production bot, you want 30-50 expressions, all the ways someone is likely to express their intent. In addition, after deploying the bot, you can review what users are writing and add those.
 
@@ -200,12 +200,12 @@ Put yourself in the shoes of the people talking to your bot. What could they pos
 
     Here are some examples for the `lame` intent:
 
-    ```
-    You have no sense of humor whatsoever.
-    That's both terrible and offensive.
-    What the heck was that?
-    Try harder, that was a very bad joke.
-    ```
+   ```
+   You have no sense of humor whatsoever.
+   That's both terrible and offensive.
+   What the heck was that?
+   Try harder, that was a very bad joke.
+   ```
 
 
 ### Test bot
@@ -234,9 +234,9 @@ We want to now test to see if the bot can detect when a user says something matc
 
 3. Enter something that you think should match the intent, like:
 
-    ```Text
-    Botty bot, can you tell me a joke please?
-    ```
+   ```Text
+   Botty bot, can you tell me a joke please?
+   ```
 
     If the intent is successfully trained, the test will show that the bot recognized the intent (as well as entities within the expression).
 
@@ -329,9 +329,9 @@ Now let's build a skill to tell a joke.
 
 8. Click **Choose Message Type**, choose the **Text** format, and type in a really good joke, like:
 
-    ```Joke
-    I just flew into town, and boy are my arms tired.
-    ```
+   ```Joke
+   I just flew into town, and boy are my arms tired.
+   ```
 
     >You can define additional jokes, and one of the jokes from the set will be displayed randomly.
 

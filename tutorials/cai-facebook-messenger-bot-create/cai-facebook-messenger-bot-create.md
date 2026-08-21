@@ -38,7 +38,7 @@ If it doesn't, create one by doing the following:
 
 1. Click **Create a Page**.
 
-    <!-- border -->![Facebook pages](FacebookPages.png)
+    ![Facebook pages](FacebookPages.png)
 
 2. In the **Business or Brand** tile, click **Get Started**.
 
@@ -65,7 +65,7 @@ To publish your chatbot on your Facebook page, you need to create an app that co
 
 You do this at <https://developers.facebook.com/> (make sure you are logged into Facebook).
 
-<!-- border -->![Facebook developers](FacebookDevelopers.png)
+![Facebook developers](FacebookDevelopers.png)
 
 First, choose **My Apps** at the top right of the screen and then choose **+ Create App**.
 
@@ -84,18 +84,18 @@ Second, give the app a name (e.g., **My Bot App**) and enter your email, then cl
 
 2. Find the **Messenger** tile, and choose **Set Up**.
 
-    <!-- border -->![Messenger](Messenger.png)
+    ![Messenger](Messenger.png)
 
 You now see **Messenger** under **PRODUCTS** on the left of the screen.
 
-<!-- border -->![Messenger products](MessengerProducts.png)
+![Messenger products](MessengerProducts.png)
 
 
 ### Get your Facebook page token
 
 1. On the left of your dashboard, choose **Settings** just below the **Messenger** product.
 
-    <!-- border -->![Settings](MessengerProductsSettings.png)
+    ![Settings](MessengerProductsSettings.png)
 
 2. In **Access Tokens** section, click **Add or Remove Pages**.
 
@@ -129,7 +129,7 @@ You now see **Messenger** under **PRODUCTS** on the left of the screen.
 
 On your Facebook dashboard, choose **Settings** > **Basic**.
 
-<!-- border -->![Basic settings](BasicSettings.png)
+![Basic settings](BasicSettings.png)
 
 For privacy reasons, the app secret is hidden.
 
