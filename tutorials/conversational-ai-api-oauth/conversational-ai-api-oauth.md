@@ -63,13 +63,13 @@ Your project should look like this:
 
 2. Add properties for the credentials you will need:
 
-    ```Python
-    clientid = "<your client ID>"
-    secret = "<your secret>"
-    requesttoken = "<your request token>"
-    oauthURL = "<URL for getting OAuth token>"
-    requestURL = "<URL for calling request API>"
-    ```
+   ```Python
+   clientid = "<your client ID>"
+   secret = "<your secret>"
+   requesttoken = "<your request token>"
+   oauthURL = "<URL for getting OAuth token>"
+   requestURL = "<URL for calling request API>"
+   ```
 
 3. Retrieve your credentials from your chatbot and place as values in the `configproperties.py` file.
 
@@ -102,26 +102,26 @@ Now your `configproperties.py` file should have your credentials.
 
 2. In the file add the following skeleton code:
 
-    ```Python
-    from flask import Flask, request, jsonify
-    import os
-    import json
-    import requests
-    from flask_caching import Cache
-    from datetime import datetime
-    import configproperties
+   ```Python
+   from flask import Flask, request, jsonify
+   import os
+   import json
+   import requests
+   from flask_caching import Cache
+   from datetime import datetime
+   import configproperties
 
-    app = Flask(__name__)
-    cf_port = os.getenv("PORT")
+   app = Flask(__name__)
+   cf_port = os.getenv("PORT")
 
-    #Other code will go here
+   #Other code will go here
 
-    if __name__ == '__main__':
-    	if cf_port is None:
-    		app.run(host='0.0.0.0', port=5000, debug=True)
-    	else:
-    		app.run(host='0.0.0.0', port=int(cf_port), debug=True)
-    ```
+   if __name__ == '__main__':
+   	if cf_port is None:
+   		app.run(host='0.0.0.0', port=5000, debug=True)
+   	else:
+   		app.run(host='0.0.0.0', port=int(cf_port), debug=True)
+   ```
 
 The above is standard code, and will create the localhost server on port 5000. Also, `debug=True` will allow you make changes to the web server without having to manually restart the server.
 
@@ -212,9 +212,9 @@ The format of the response for the Runtime `request` and `dialog` APIs are descr
 
 2. Call the server with the URL:
 
-    ```URL
-    http://localhost:5000/api?text=hi
-    ```
+   ```URL
+   http://localhost:5000/api?text=hi
+   ```
 
     The web page shows the intent that was detected, `greetings`.
 
@@ -222,9 +222,9 @@ The format of the response for the Runtime `request` and `dialog` APIs are descr
 
 3. Call the server with the URL:
 
-    ```URL
-    http://localhost:5000/api?text=bye
-    ```
+   ```URL
+   http://localhost:5000/api?text=bye
+   ```
 
     The web page shows the intent that was detected, now `goodbye`.
 
@@ -232,9 +232,9 @@ The format of the response for the Runtime `request` and `dialog` APIs are descr
 
 4. Call the server with the URL:
 
-    ```URL
-    http://localhost:5000/api?text=abcdef
-    ```
+   ```URL
+   http://localhost:5000/api?text=abcdef
+   ```
 
     The web page now says that no intent was detected.
 

@@ -83,11 +83,11 @@ You will create a very simple bot that lets the user specify an animal or a loca
 
     Click the **New Replies**, and add the following text message, and then click **Save** and **Back**:
 
-    ```Message
-    I can give you info on an animal, or a map of a location.
+   ```Message
+   I can give you info on an animal, or a map of a location.
 
-    Enter an animal or a location.
-    ```
+   Enter an animal or a location.
+   ```
 
     >This message is displayed if the requirements are missing.
 
@@ -137,9 +137,9 @@ Now you will call an API to return an a fun fact about the animal you specify.
 
 5. Click **Send Message**, select **Text**, and set the message text to:
 
-    ```Message
-    {{api_service_response.funfact.body.text}}
-    ```
+   ```Message
+   {{api_service_response.funfact.body.text}}
+   ```
 
 6. Click **Update Conversation | Reset Conversation**, and click **Save**.
 

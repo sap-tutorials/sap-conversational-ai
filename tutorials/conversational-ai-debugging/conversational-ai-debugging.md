@@ -137,7 +137,7 @@ Once a skill is selected, its requirements are checked. If they are fulfilled, t
 
 The following is a flowchart showing how things work:
 
-<!-- border -->![Process flow](CAI-process-flow.jpg)
+![Process flow](CAI-process-flow.jpg)
 
 
 

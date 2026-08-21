@@ -92,9 +92,9 @@ The tracking number is based on one of UPS's standards: 18 characters with const
 
 5. Enter the following regular expression:
 
-    ```Regex
-    \b(1Z[0-9A-Z]{6}[\d]{10})\b
-    ```
+   ```Regex
+   \b(1Z[0-9A-Z]{6}[\d]{10})\b
+   ```
 
     >This defines only one kind of UPS tracking number, and is a simple regex that does not distinguish between the parts of the tracking number.
 
@@ -189,7 +189,7 @@ After you've determined that the user wants to track a package, you have to buil
 
     Call the skill **`track-parcel`**, and specify that it is a **Business** skill, then click **Add**.
 
-    <!-- border -->![Create track parcel skill](createTrackParcelSkill.png)
+    ![Create track parcel skill](createTrackParcelSkill.png)
 
 2. Open the skill for editing by clicking on its name.
 
